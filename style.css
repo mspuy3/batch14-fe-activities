@@ -5,7 +5,8 @@
    padding: 0;
    box-sizing: border-box;
    font-family: 'Lexend', sans-serif;
-   font-size: 2vmin;
+   font-size: 2.5vmin;
+   caret-color: rgba(0,0,0,0);
 }
 
 :root{
@@ -14,9 +15,9 @@
    --dark-color: black;
    --light-color: #FAF9F6;
 
-   --font-largest: 9rem;
-   --font-larger: 6rem;
-   --font-large: 3rem;
+   --font-largest: 6rem;
+   --font-larger: 4rem;
+   --font-large: 2rem;
    --font-medium: 1.5rem;
 
    --content-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -28,7 +29,7 @@
 
 body{
    background-color: var(--light-color);
-   color: var(--dark-color);
+   color: var(--main-color);
    display: flex;
    flex-direction: column;
    overflow: hidden;
@@ -40,7 +41,7 @@ body{
 nav{
    display: flex;
    justify-content: space-between;
-   background-color: var(--main-color);
+   background-color: white;
    height: 10vh;
    padding: 0 1vw;
    box-shadow: var(--content-shadow);
@@ -51,12 +52,17 @@ nav{
    #navbar-logo{
       width: 10vh;
       padding: 2vh;
+      filter: drop-shadow(0px 2px 4px black);
       transition: padding 0.125s;
    }
 
       #navbar-logo:hover{
          padding: 1.5vh;
-      } 
+         animation: rotating 1s infinite;
+      }
+               @keyframes rotating {
+                  100% {transform: rotate(360deg);}
+               }
 
       #navbar-logo:active{
          padding: 1vh;
@@ -69,6 +75,7 @@ nav{
       justify-content: flex-end;
       align-items: center;
       list-style-type:none;
+      caret-color: rgba(0,0,0,0);
    }
 
       nav ul li{
@@ -81,8 +88,8 @@ nav{
       }
 
          nav ul li a{
-            font-size: var(--font-medium);
-            color: var(--light-color);
+            /* font-size: var(--font-medium); */
+            color: var(--main-color);
             text-decoration: none;
             transition: font-weight 0.125s;
          }
@@ -113,69 +120,141 @@ main{
 }
 
 .section-container{
-   /* border: 10px solid violet; */ 
+   border: 1px solid black; 
    min-height: 90vh;
    max-height: max-content;
    display: flex;
    flex-wrap: wrap;
+   box-shadow: var(--content-shadow);
+   caret-color: rgba(0,0,0,0);
 }
 
-#about-me-container {
-   justify-content: center;
-   align-items: center;
-   padding: 2.5vh 5vw;
-}
+   /* About Me section here */
 
-   #about-me-container > div {
-      /* border: 3px solid black; */
-      height: max-content;
+   #about-me-container {
+      justify-content: center;
+      align-items: center;
+      padding: 2.5vh 5vw;
    }
 
-   #portrait{
-      height: 60vmin;
-      border-radius: 2vw;
-      box-shadow: var(--content-shadow);
-   }
-
-   #about-me-text{
-      margin-left: 5vw;
-   }
-
-      #hi-text{
-         font-size: var(--font-largest);
-         text-align: left;
-         font-weight: 900;
-         text-shadow: var(--text-shadow);
+      #about-me-container > div {
+         /* border: 3px solid black; */
+         height: max-content;
       }
 
-      #im-text{
-         font-size: var(--font-medium);
-         text-align: left;
-         text-shadow: var(--text-shadow);
-         margin: 1vh 0;
-      }
-
-      #loading-bar{
-         margin: 3vh 0 0 0;
+      #portrait{
+         height: 60vmin;
          border-radius: 2vw;
-         width: 3vw;
-         height: 5vh;
-         background-color: var(--accent-color);
-         animation-name: loading-effect;
-         animation-duration: 3s;
-         animation-direction: alternate;
-         animation-iteration-count: infinite;
-         box-shadow: var(--content-shadow);
+         /* box-shadow: var(--content-shadow); */
+         filter: drop-shadow(0px 4px 8px black);
+         transition: height 1s;
       }
 
-      @keyframes loading-effect {
-         0% {width: 3vw}
-         100% {width: 69vmin}
+         #portrait:hover {
+            height: 80vmin;
+         }
+
+         #portrait:active {
+            animation: swinging 6s infinite;
+            animation-direction: alternate;
+         }
+                  @keyframes swinging {
+                     25% {transform: rotate(90deg);}
+                     75% {transform: rotate(-90deg);}
+                  }
+
+      #about-me-text{
+         margin-left: 5vw;
       }
 
-#avion-projects-container{
-   background-color: white ;
-}
+         #hi-text{
+            font-size: var(--font-largest);
+            text-align: left;
+            font-weight: 900;
+            text-shadow: var(--text-shadow);
+         }
+
+         #im-text{
+            font-size: var(--font-large);
+            text-align: left;
+            /* text-shadow: var(--text-shadow); */
+            margin: 1vh 0;
+         }
+
+         #loading-bar{
+            margin: 3vh 0 0 0;
+            border-radius: 2vw;
+            width: 3vw;
+            height: 5vh;
+            background-color: var(--accent-color);
+            animation-name: loading-effect;
+            animation-duration: 3s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            box-shadow: var(--content-shadow);
+         }
+
+         @keyframes loading-effect {
+            0% {width: 3vw}
+            50%{background-color: var(--accent-color);}
+            100% {width: 75vmin; background-color: var(--main-color);}
+         }
+
+   /* Learning Projects here */
+
+   #learning-projects-container {
+      background-color: white;
+      padding: 2vmin;
+      display: flex;
+   }
+
+      #learning-projects-title {
+         font-size: var(--font-large);
+         /* background-color: gray; */
+         width: 98vw;
+         text-align: center;
+      }
+
+      #individual-projects-container {
+         /* background-color: pink; */
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+      }
+
+         .individual-project-box {
+            background-color: var(--light-color);
+            box-shadow: var(--content-shadow);
+            margin: 2.5vmin;
+            /* padding: 1vmin; */
+            max-width: 400px;
+            min-height: 250px;
+            border-radius: 2vmin;
+            display: flex;
+            /* transition: box-shadow 0.5s; */
+            transition: transform 0.5s;
+         }
+
+                     .individual-project-box:hover {
+                        /* box-shadow: var(--hover-shadow-numbers) var(--accent-color); */
+                        transform: translateY(-15px);
+                     }
+
+            .individual-project-img{
+               background-color: var(--accent-color);
+               width: 800px;
+               border-radius: 2vmin 0 0 2vmin;
+               padding: 1vmin;
+            }
+            .individual-project-text{
+               /* background-color: lightblue; */
+               margin: 1vmin;
+            }
+               .project-title{
+                  font-weight: bolder;
+                  margin-bottom: 1vmin;
+               }
+               .project-description{}
 
 
 /* Main related styling ENDS here */
@@ -187,12 +266,12 @@ main{
  
  /* Track */
  ::-webkit-scrollbar-track {
-   background: var(--light-color); 
+   background: white; 
  }
   
  /* Handle */
  ::-webkit-scrollbar-thumb {
-   background: var(--main-color); 
+   background: var(--light-color); 
  }
  
  /* Handle on hover */
