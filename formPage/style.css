@@ -1,0 +1,190 @@
+html{
+font-size: 1vw;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+
+body {
+   font-family: 'Inconsolata', monospace;
+   background-color: white;
+   font-size: 1rem;
+   line-height: 1.25;
+   color: black;
+   background-image: url("https://images.news18.com/ibnlive/uploads/2020/04/1586930283_learning-to-code.jpg");
+   background-size: cover;
+   background-blend-mode: darken;
+}
+
+#main{
+margin: 0rem 5rem;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+height: 95vh;
+width: 90vw;
+align-items: center;
+
+flex-direction: row;
+transition: flex-direction 2s;
+}
+
+#title-container {
+flex-basis: 25%;
+background-color: #FAF9F6;
+border-radius: 1rem;
+padding: 1rem;
+box-shadow: 0 0 0.5rem 0.125rem black;
+}
+
+
+
+   #title{
+   text-align: center;
+   font-weight: bolder;
+   }
+
+   #description{
+   text-align: center;
+   font-size: 2rem;
+   }
+
+#survey-form{
+flex-basis: 50%;
+padding: 1rem;
+border-radius: 1rem;
+background-color: #FAF9F6;
+box-shadow: 0 0 0.5rem 0.125rem black;
+height: 90vh;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+@media (max-aspect-ratio: 4/3) {
+   html{
+      font-size: 1.5vw;
+   }
+   #main{
+      margin: 1rem 1rem;
+      padding: 0.5rem;
+      flex-direction: column;
+      justify-content: space-evenly;
+   }
+   #title-container {
+      flex-basis: 15%;
+      width: max-content;
+      margin: 0;
+      max-width: 95%;
+      }
+   #survey-form{
+      flex-basis: 75%;
+      max-width: 95%;
+      }   
+}
+
+#title-container:hover,#survey-form:hover {
+   background-color: white;
+   box-shadow: 0 0 3rem 0.25rem black;
+}
+
+   label {
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+      transition:text-shadow 1s;
+   }
+
+   label:hover {
+      text-shadow: 0 0 0.5rem black;
+   }
+
+   #name-container{
+      display: flex;
+      align-items: center;
+   }
+      #name {
+         flex-grow: 1;
+      }
+
+   #age-email-container {
+      display: flex;
+      align-items: center;
+   }
+
+      #number {
+         flex-grow: 3;
+      }
+      #email {
+         flex-grow: 7;
+      }
+
+   #dropdown-container {
+      display: flex;
+      align-items: center;
+   }
+
+      #dropdown {
+         flex-grow: 1;
+      }
+
+   #radio-checkbox-container {
+      display: flex;
+      padding: 1rem;
+   }
+
+      #radio-container, #checkbox-container {
+         flex: 1;
+         padding: 0 1rem;
+      }
+
+      #radio-container label, #checkbox-container label {
+         font-size: 1.25rem;
+         margin: 0;
+      }
+
+   #textarea-container{
+      display: flex;
+      flex-direction: column;
+   }
+
+      #feedback{
+         height: 3rem;
+      }
+   
+
+
+
+   input[type=text], input[type=email], input[type=number], input[list=dropdown], select, textarea {
+   padding: 1rem 1rem;
+   margin: 0.5rem;
+   border: 1px solid black;
+   border-radius: 1rem;
+   }
+
+   #submit {
+      background-color: black;
+      border-radius: 1rem;
+      color: white;
+      height: 3rem;
+      margin: 0 0.5rem;
+      font-size: 2rem;
+      border: 1px solid black;
+      box-shadow: 0 0 0.5rem 0.0625rem gray;
+   }
+
+   #submit:hover {
+   background-color: white;
+   color: black;
+   border: 1px solid black;
+   }
+
+   #submit:active{
+   background-color: white;
+   color: black;
+   border: 1px solid black;
+   font-weight: bolder;
+   }
+

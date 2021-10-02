@@ -23,8 +23,7 @@
    --content-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
    --text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1),0px 18px 23px rgba(0,0,0,0.1);
    --hover-shadow-numbers: 0 0 0.0625rem 0.125rem;
-   --active-shadow-numbers: 0 0 0.0625rem 0.25rem;
-   
+   --active-shadow-numbers: 0 0 0.0625rem 0.25rem;   
 }
 
 body{
@@ -34,6 +33,15 @@ body{
    flex-direction: column;
    overflow: hidden;
 }
+
+a {
+   color: var(--main-color);
+   text-decoration: none;
+}
+
+/* h2{
+   text-shadow: var(--text-shadow);
+} */
 
 
 /* Navbar related styling STARTS here */
@@ -89,8 +97,8 @@ nav{
 
          nav ul li a{
             /* font-size: var(--font-medium); */
-            color: var(--main-color);
-            text-decoration: none;
+            /* color: var(--main-color);
+            text-decoration: none; */
             transition: font-weight 0.125s;
          }
 
@@ -134,7 +142,7 @@ main{
    #about-me-container {
       justify-content: center;
       align-items: center;
-      padding: 2.5vh 5vw;
+      padding: 2.5vh 1vw;
    }
 
       #about-me-container > div {
@@ -197,7 +205,7 @@ main{
          @keyframes loading-effect {
             0% {width: 3vw}
             50%{background-color: var(--accent-color);}
-            100% {width: 75vmin; background-color: var(--main-color);}
+            100% {width: 60vw; background-color: var(--main-color);}
          }
 
    /* Learning Projects here */
@@ -225,7 +233,7 @@ main{
          .individual-project-box {
             background-color: var(--light-color);
             box-shadow: var(--content-shadow);
-            margin: 2.5vmin;
+            margin: 1.25vmax;
             /* padding: 1vmin; */
             max-width: 400px;
             min-height: 250px;
@@ -241,21 +249,113 @@ main{
                      }
 
             .individual-project-img{
+               flex: 1 3 100px;
                background-color: var(--accent-color);
-               width: 800px;
+               /* width: 50%; */
                border-radius: 2vmin 0 0 2vmin;
                padding: 1vmin;
             }
+
             .individual-project-text{
-               /* background-color: lightblue; */
-               margin: 1vmin;
+               flex: 3 1 200px;
+               margin: 2vmin;
             }
                .project-title{
-                  font-weight: bolder;
+                  font-weight: 900;
                   margin-bottom: 1vmin;
+                  text-decoration: underline;
                }
-               .project-description{}
 
+               .project-description{
+                  line-height: 4vmin;
+                  /* font-weight: bold; */
+                  color: var(--dark-color);
+                  transition: font-size 0.25s;
+               }
+               .project-description:hover{
+                  line-height: 4vmin;
+                  font-weight: bold;
+                  color: var(--dark-color);
+                  font-size: var(--font-medium);
+               }
+
+   /* Contact Information here */
+
+   #contact-information-container{
+      display: flex;
+      flex-direction: column;
+      padding: 1vmin;
+   }
+
+      #moving-block-container{
+         background-color: none;
+      }
+         #moving-block{
+            width: 3vmin;
+            height: 3vmin;
+            position: relative;
+            animation-name: example;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+
+          }
+          
+          @keyframes example {
+            0%   {left:0; top:0px;}
+            25%  {left:95vw; top:0px;}
+            50%  {left:95vw; top:85vh;}
+            75%  {left:0px; top:85vh;}
+            100% {left:0px; top:0px;}
+          }
+
+      #contact-information-title{
+         margin: 3vmin;
+         font-size: var(--font-large);
+         text-align: center;
+      }
+
+      #contact-cards-container{
+         /* background-color: salmon; */
+         display: flex;
+         flex-direction: column;
+         flex-wrap: wrap;
+         align-items: center;
+         margin-top: 5vh;
+      }
+
+      .contact-card {
+         font-size: var(--font-medium);
+         margin: 5vmin;
+         color: white;
+         padding: 5vmin;
+         min-width: 200px;
+         width: 200px;
+         text-align: center;
+         border-radius: 2vmin;
+         box-shadow: var(--content-shadow);
+         transition: width 0.5s, font-size 0.5s, font-weight 0.5s;
+         /* transition: height 1s; */
+      }
+
+               .contact-card:hover {
+                  width: 90vw;
+                  font-weight: bold;
+                  font-size: var(--font-larger);
+               }
+
+         #linkedin-div{
+            background-color: #0072b1;
+         }
+
+         #github-div{
+            background-color: #333;
+         }
+
+      #footerish{
+         margin-top: 5vh;
+         text-align: center;
+         padding: 0 20vw;
+      }
 
 /* Main related styling ENDS here */
 

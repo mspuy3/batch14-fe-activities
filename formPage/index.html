@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Form Page</title>
+
+   <link rel="icon" href="../img/logo1.png" type = "image/x-icon">
+
+   <link rel="stylesheet" href="./style.css">   
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+   <main id="main">
+      
+      <div id="title-container">
+         <h1 id="title"> Sample Survey Form </h1>
+         <p id="description"> Please accomplish the short survey form below for us to help you better. </p>
+      </div>
+
+      <form id="survey-form" action="./store.txt" method="POST">
+        
+         <div id="name-container">
+            <label for="name" id="name-label">Name</label>
+            <input type="text" id="name" placeholder="Enter your Name" required>
+         </div>
+         
+         <div id="age-email-container">
+            <label for="number" id="number-label">Age</label>
+            <input type="number" id="number" placeholder="Enter your Age" min="18" max="70" required>
+
+            <label for="email" id="email-label">Email</label>
+            <input type="email" id="email" placeholder="Enter your Email" required>
+         </div>
+         
+         <div id="dropdown-container">
+            <label for="dropdown" id="dropdown-label">Your Preferred Browser</label>
+            <select name="dropdown" id="dropdown" required>
+               <option value="" disabled selected hidden>Select from the list below...</option>
+               <option value="Firefox">Firefox</option>
+               <option value="Chrome">Chrome</option>
+               <option value="Safari">Safari</option>
+               <option value="Opera">Opera</option>
+               <option value="Edge">Edge</option>
+               <option value="Others">Others</option>
+            </select>
+         </div>
+         
+         <div id="radio-checkbox-container">
+            <div id="radio-container">
+            <label for="level-html">Your Expertise Level on HTML</label><br>
+               <input type="radio" id="Beginner" name="level-html" value="Beginner">
+               <label for="Beginner">Beginner</label><br>
+               <input type="radio" id="Advanced" name="level-html" value="Advanced">
+               <label for="Advanced">Advanced</label><br>
+               <input type="radio" id="Expert" name="level-html" value="Expert">
+               <label for="Expert">Expert</label><br>
+            </div>
+            <div id="checkbox-container">
+            <label for="layout-css">Your Preferred CSS Layout Technique (You may select more than one)</label><br>
+               <input type="checkbox" id="Normal Flow" name="layout-css" value="Normal Flow">
+               <label for="Normal Flow">Normal Flow</label><br>
+               <input type="checkbox" id="Flexbox" name="layout-css" value="Flexbox">
+               <label for="Flexbox">CSS Flexbox</label><br>
+               <input type="checkbox" id="Grid" name="layout-css" value="Grid">
+               <label for="Grid">CSS Grid</label><br>
+               <input type="checkbox" id="Floats" name="layout-css" value="Floats">
+               <label for="Floats">Floats</label><br>
+            </div>
+         </div>
+
+         <div id="textarea-container">
+         <label for="feedback">Any comments or suggestions?</label>
+            <textarea id="feedback" name="feedback" placeholder="Enter your comment/s and/or suggestion/s here..."></textarea>
+         </div>
+            
+         <input type="submit" id="submit" value="Submit">
+        
+      </form>
+   
+   </main>
+
+</body>
+
+</html>

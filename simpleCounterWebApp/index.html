@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Counter Web App</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <header>Simple Counter</header>
+  <h1 id="counter-number"> 0 </h1>
+  <div id="counter-container">
+    <button id="minus-button" onclick="minusOne()"> -1 </button>
+    <button id="add-button" onclick="addOne()"> +1 </button>
+  </div>
+  <div id="re-container">
+    <button id="reset-button" onclick="reset()"> Reset </button>
+    <button id="record-button" onclick="record()"> Record </button>
+  </div>
+  <div id="record-container">
+    <p id="record-text">Recorded Counts:</p>
+    <p id="records-list">Empty<p>
+    <button id="clear-record-button" onclick="clearRecord()">Clear</button>
+  </div>
+</body>
+
+<script src="index.js"> </script>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

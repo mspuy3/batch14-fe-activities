@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Azeret Mono', monospace; 
+  text-align: center;
+}
+
+body{
+  font-size: 3.5vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1080px) {
+  body{
+    font-size: 3.5vmin;
+  }
+}
+
+@media (max-width: 720px) {
+  body{
+    font-size: 4vmin;
+  }
+}
+
+@media (max-width: 480px) {
+  body{
+    font-size: 5vmin;
+  }
+}
+
+header{
+  text-align: center;
+  font-size: 2em;
+  padding: 0.25em;
+}
+
+#counter-number{
+  text-align: center;
+  font-size: 2.5em;
+}
+
+button{
+  width: 5em;
+  height: 2em;
+  font-size: 1em;
+  border-radius: 10px;
+  margin: 0em 1em;
+}
+
+#counter-container{
+  display: flex;
+  justify-content: center;
+  margin: 1em 0em;
+}
+
+#minus-button{
+  background-color: salmon;
+  border: 1px solid salmon;
+}
+
+#minus-button:hover{
+  background-color: red;
+  border: 1px solid red;
+}
+
+#minus-button:active{
+  background-color: white;
+  border: 1px solid red;
+}
+
+#add-button{
+  background-color: lightgreen;
+  border: 1px solid lightgreen;
+}
+
+#add-button:hover{
+  background-color: yellowgreen;
+  border: 1px solid yellowgreen;
+}
+
+#add-button:active{
+  background-color: white;
+  border: 1px solid green;
+}
+
+#re-container{
+  display: flex;
+  justify-content: center;
+}
+
+#reset-button{
+  background-color: maroon;
+  border: 1px solid maroon;
+  color: white;
+}
+
+#reset-button:hover{
+  background-color: red;
+  border: 1px solid red;
+}
+
+#reset-button:active{
+  background-color: white;
+  border: 1px solid red;
+  color: black;
+}
+
+#record-button{
+  background-color: darkgreen;
+  border: 1px solid darkgreen;
+  color: white;
+}
+
+#record-button:hover{
+  background-color: yellowgreen;
+  border: 1px solid yellowgreen;
+}
+
+#record-button:active{
+  background-color: white;
+  border: 1px solid green;
+  color: black;
+}
+
+#record-container{
+  border: 3px solid black;
+  border-radius: 10px;
+  width: 15em;
+  display: block;
+  margin: 1em 0em;
+  padding: 0.25em 0.5em;
+  line-height: 1.5em;
+}
+
+#record-text{
+  font-weight: bold;
+}
+
+#clear-record-button{
+  margin-top: 0.25em;
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+}
+
+#clear-record-button:hover{
+  background-color: grey;
+  border: 1px solid grey;
+}
+
+#clear-record-button:active{
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
