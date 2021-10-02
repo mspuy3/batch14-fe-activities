@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@200&display=swap');
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Lexend', sans-serif;
+   font-size: 2vmin;
+}
+
+:root{
+   --main-color: maroon;
+   --accent-color: goldenrod;
+   --dark-color: black;
+   --light-color: #FAF9F6;
+
+   --font-largest: 9rem;
+   --font-larger: 6rem;
+   --font-large: 3rem;
+   --font-medium: 1.5rem;
+
+   --content-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   --text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1),0px 18px 23px rgba(0,0,0,0.1);
+   --hover-shadow-numbers: 0 0 0.0625rem 0.125rem;
+   --active-shadow-numbers: 0 0 0.0625rem 0.25rem;
+   
+}
+
+body{
+   background-color: var(--light-color);
+   color: var(--dark-color);
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+}
+
+
+/* Navbar related styling STARTS here */
+
+nav{
+   display: flex;
+   justify-content: space-between;
+   background-color: var(--main-color);
+   height: 10vh;
+   padding: 0 1vw;
+   box-shadow: var(--content-shadow);
+}
+
+   /* Navbar Logo here */
+
+   #navbar-logo{
+      width: 10vh;
+      padding: 2vh;
+      transition: padding 0.125s;
+   }
+
+      #navbar-logo:hover{
+         padding: 1.5vh;
+      } 
+
+      #navbar-logo:active{
+         padding: 1vh;
+      }      
+
+   /* Navbar Links here */
+
+   nav ul{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      list-style-type:none;
+   }
+
+      nav ul li{
+         /* border: 1px solid black; */
+         border-radius: 2vw;
+         padding: 0.5vw 1vw;
+         margin: 0 1vw;
+         transition: background-color 0.125s;
+         transition: box-shadow 0.125s;
+      }
+
+         nav ul li a{
+            font-size: var(--font-medium);
+            color: var(--light-color);
+            text-decoration: none;
+            transition: font-weight 0.125s;
+         }
+
+               nav ul li:hover{
+                  /* border: 1px solid var(--accent-color); */
+                  background-color: var(--accent-color);
+                  box-shadow: var(--content-shadow);
+               }
+
+               nav ul li:active{
+                  box-shadow: var(--active-shadow-numbers) var(--accent-color);
+               }
+
+               nav ul li a:active {
+                  font-weight: bolder;
+               }
+
+/* Navbar related styling ENDS here */
+
+
+
+/* Main related styling STARTS here */
+
+main{
+   height: 90vh;
+   overflow-y: scroll;
+}
+
+.section-container{
+   /* border: 10px solid violet; */ 
+   min-height: 90vh;
+   max-height: max-content;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+#about-me-container {
+   justify-content: center;
+   align-items: center;
+   padding: 2.5vh 5vw;
+}
+
+   #about-me-container > div {
+      /* border: 3px solid black; */
+      height: max-content;
+   }
+
+   #portrait{
+      height: 60vmin;
+      border-radius: 2vw;
+      box-shadow: var(--content-shadow);
+   }
+
+   #about-me-text{
+      margin-left: 5vw;
+   }
+
+      #hi-text{
+         font-size: var(--font-largest);
+         text-align: left;
+         font-weight: 900;
+         text-shadow: var(--text-shadow);
+      }
+
+      #im-text{
+         font-size: var(--font-medium);
+         text-align: left;
+         text-shadow: var(--text-shadow);
+      }
+
+      #loading-bar{
+         margin: 3vh 0 0 0;
+         border-radius: 2vw;
+         width: 5vw;
+         height: 5vh;
+         background-color: var(--accent-color);
+         animation-name: loading-effect;
+         animation-duration: 3s;
+         animation-direction: alternate;
+         animation-iteration-count: infinite;
+         box-shadow: var(--content-shadow);
+      }
+
+      @keyframes loading-effect {
+         0% {width: 5vw}
+         100% {width: 70vmin}
+      }
+
+#avion-projects-container{
+   background-color: white ;
+}
+
+
+/* Main related styling ENDS here */
+
+/* width */
+::-webkit-scrollbar {
+   width: 0.5vw;
+ }
+ 
+ /* Track */
+ ::-webkit-scrollbar-track {
+   background: var(--light-color); 
+ }
+  
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+   background: var(--main-color); 
+ }
+ 
+ /* Handle on hover */
+ ::-webkit-scrollbar-thumb:hover {
+   background: var(--accent-color); 
+ }
