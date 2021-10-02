@@ -9,6 +9,12 @@
    caret-color: rgba(0,0,0,0);
 }
 
+@media only screen and (max-aspect-ratio: 4/3) {
+   *{
+      font-size: 3.5vmin;
+   }
+ }
+
 :root{
    --main-color: maroon;
    --accent-color: goldenrod;
