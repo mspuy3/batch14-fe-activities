@@ -152,12 +152,13 @@ main{
          font-size: var(--font-medium);
          text-align: left;
          text-shadow: var(--text-shadow);
+         margin: 1vh 0;
       }
 
       #loading-bar{
          margin: 3vh 0 0 0;
          border-radius: 2vw;
-         width: 5vw;
+         width: 3vw;
          height: 5vh;
          background-color: var(--accent-color);
          animation-name: loading-effect;
@@ -168,8 +169,8 @@ main{
       }
 
       @keyframes loading-effect {
-         0% {width: 5vw}
-         100% {width: 70vmin}
+         0% {width: 3vw}
+         100% {width: 69vmin}
       }
 
 #avion-projects-container{
