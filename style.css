@@ -131,6 +131,7 @@ nav{
 main{
    height: 90vh;
    overflow-y: scroll;
+   scroll-behavior: smooth;
 }
 
 .section-container{
@@ -211,7 +212,7 @@ main{
          @keyframes loading-effect {
             0% {width: 3vw}
             50%{background-color: var(--accent-color);}
-            100% {width: 60vw; background-color: var(--main-color);}
+            100% {width: 80vmin; background-color: var(--main-color);}
          }
 
    /* Learning Projects here */
@@ -278,11 +279,12 @@ main{
                   color: var(--dark-color);
                   transition: font-size 0.25s;
                }
-               .project-description:hover{
+               .project-description:hover {
                   line-height: 4vmin;
                   font-weight: bold;
                   color: var(--dark-color);
-                  font-size: var(--font-medium);
+                  text-align: justify;
+                  /* font-size: var(--font-medium); */
                }
 
    /* Contact Information here */
