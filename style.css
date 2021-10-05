@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 
 *{
    margin: 0;
    padding: 0;
    box-sizing: border-box;
    font-family: 'Lexend', sans-serif;
+   /* font-family: 'Inconsolata', monospace; */
    font-size: 2.5vmin;
    caret-color: rgba(0,0,0,0);
 }
@@ -115,6 +117,7 @@ nav{
                }
 
                nav ul li:active{
+                  
                   box-shadow: var(--active-shadow-numbers) var(--accent-color);
                }
 
@@ -277,15 +280,17 @@ main{
                   line-height: 4vmin;
                   /* font-weight: bold; */
                   color: var(--dark-color);
-                  transition: font-size 0.25s;
+                  transition: font-weight 2s;
+                  transition: text-align 2s;
                }
-               .project-description:hover {
-                  line-height: 4vmin;
-                  font-weight: bold;
-                  color: var(--dark-color);
-                  text-align: justify;
-                  /* font-size: var(--font-medium); */
-               }
+
+                     .project-description:hover {
+                        line-height: 4vmin;
+                        font-weight: bold;
+                        color: var(--dark-color);
+                        text-align: justify;
+                        /* font-size: var(--font-medium); */
+                     }
 
    /* Contact Information here */
 
