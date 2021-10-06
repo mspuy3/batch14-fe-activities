@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +5,13 @@
           box-sizing: border-box;
 }
 
+@use url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 body {
   background-color: whitesmoke;
 }
 
 #main {
-  margin: 1% 25%;
+  margin: 5% 25%;
   background-color: none;
   font-family: 'Inconsolata', monospace;
 }
@@ -22,7 +22,7 @@ body {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   padding: 2%;
-  margin: 1%;
+  margin-bottom: 2%;
 }
 
 #title-container #title {
@@ -36,11 +36,13 @@ body {
 }
 
 #survey-form {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 1%;
   background-color: #FEC260;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 1vmin;
-  padding: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,7 +56,8 @@ body {
 
 #survey-form > * {
   border: 1px solid red;
-  margin: 1vmin;
+  border: none;
+  margin: 0.5vmin;
 }
 
 #survey-form > div {
@@ -69,7 +72,7 @@ body {
 }
 
 #survey-form > div > * {
-  margin: 0 1%;
+  margin: 0.25vmin;
 }
 
 #survey-form input[type=radio], #survey-form input[type=checkbox] {
@@ -77,28 +80,7 @@ body {
           box-shadow: none;
 }
 
-#survey-form #textarea-container {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-#survey-form #textarea-container > * {
-  margin: 1%;
-}
-
-#survey-form #textarea-container textarea {
-  width: 100%;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: none;
-  padding: 1%;
-}
-
-input, select {
+#survey-form input, #survey-form select {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -107,13 +89,14 @@ input, select {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-label {
+#survey-form label {
   font-weight: bold;
   color: #2A0944;
 }
 
 #age-email-container > div {
   border: 1px solid blue;
+  border: none;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -129,14 +112,61 @@ label {
       flex-basis: 1;
 }
 
+#age-email-container label {
+  margin-right: 5%;
+}
+
+#radio-checkbox-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  border: 1px solid red;
+}
+
+#textarea-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#textarea-container > * {
+  margin: 1%;
+}
+
+#textarea-container textarea {
+  width: 100%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  padding: 1%;
+}
+
+#submit-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 #submit {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: 5vh;
+  padding: 10%;
   background-color: #A12568;
   color: #FEC260;
-  font-size: 4vmin;
+  font-size: 3vmin;
+  font-family: 'Inconsolata', monospace;
+}
+
+#submit:hover {
+  background-color: #2A0944;
 }
 
 #submit:active {
