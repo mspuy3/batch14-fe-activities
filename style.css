@@ -242,7 +242,7 @@ main{
          .individual-project-box {
             background-color: var(--light-color);
             box-shadow: var(--content-shadow);
-            margin: 2.5vmax;
+            margin: 5vh 2vw;
             /* padding: 1vmin; */
             width: 60vmin;
             min-height: 30vmin;
