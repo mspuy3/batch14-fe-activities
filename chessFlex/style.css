@@ -2,7 +2,7 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   caret-color: rgba(0,0,0,0)
+   caret-color: rgba(0,0,0,0);
 }
 
 body{
@@ -23,7 +23,7 @@ body{
    /* background-color: slateblue; */
    text-align: center;
    margin-bottom: 3vh;
-   font-size: 3vmin;
+   font-size: 2vmin;
 }
 
                      #chessboard{
