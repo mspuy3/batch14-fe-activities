@@ -150,9 +150,11 @@ main{
    /* About Me section here */
 
    #about-me-container {
+      /* background-color: salmon; */
       justify-content: center;
       align-items: center;
       padding: 2.5vh 1vw;
+      gap: 5vmin;
    }
 
       #about-me-container > div {
@@ -161,7 +163,7 @@ main{
       }
 
       #portrait{
-         height: 60vmin;
+         height: 60vh;
          border-radius: 2vw;
          /* box-shadow: var(--content-shadow); */
          filter: drop-shadow(0px 4px 8px black);
@@ -169,7 +171,7 @@ main{
       }
 
          #portrait:hover {
-            height: 80vmin;
+            height: 80vh;
          }
 
          #portrait:active {
@@ -181,9 +183,6 @@ main{
                      75% {transform: rotate(-90deg);}
                   }
 
-      #about-me-text{
-         margin-left: 5vw;
-      }
 
          #hi-text{
             font-size: var(--font-largest);
@@ -222,7 +221,7 @@ main{
 
    #learning-projects-container {
       background-color: white;
-      padding: 2vmin;
+      /* padding: 2vmin; */
       display: flex;
    }
 
@@ -243,10 +242,10 @@ main{
          .individual-project-box {
             background-color: var(--light-color);
             box-shadow: var(--content-shadow);
-            margin: 1.25vmax;
+            margin: 2.5vmax;
             /* padding: 1vmin; */
-            max-width: 400px;
-            min-height: 250px;
+            width: 60vmin;
+            min-height: 30vmin;
             border-radius: 2vmin;
             display: flex;
             /* transition: box-shadow 0.5s; */
@@ -341,8 +340,8 @@ main{
          margin: 5vmin;
          color: white;
          padding: 5vmin;
-         min-width: 200px;
-         width: 200px;
+         min-width: max-content;
+         width: 25vmin;
          text-align: center;
          border-radius: 2vmin;
          box-shadow: var(--content-shadow);
@@ -351,7 +350,7 @@ main{
       }
 
                .contact-card:hover {
-                  width: 90vw;
+                  width: 80vw;
                   font-weight: bold;
                   font-size: var(--font-larger);
                }
@@ -390,4 +389,8 @@ main{
  /* Handle on hover */
  ::-webkit-scrollbar-thumb:hover {
    background: var(--accent-color); 
+ }
+
+ .not-done {
+    background-color: salmon;
  }
