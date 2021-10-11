@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  caret-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  height: 10vh;
+  padding: 0 15vmin;
+  background-color: #00529B;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#header #header-img img {
+  height: 8vmin;
+  transition: height 0.5s;
+}
+#header #header-img img:hover {
+  height: 10vmin;
+}
+#header ul {
+  width: 60vmin;
+  font-size: 3vmin;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+#header ul li a {
+  text-decoration: none;
+  color: white;
+}
+#header ul li a:hover {
+  color: #EE2E1F;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+#main-content {
+  height: 90vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.pages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  padding: 0 15vmin;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.page-title-container {
+  justify-content: center;
+}
+
+#the-product {
+  background-color: white;
+}
+#the-product #the-product-title {
+  color: #EE2E1F;
+  font-size: 9vmin;
+  display: none;
+}
+#the-product-img {
+  width: 80vmin;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#the-video {
+  background-color: #00529B;
+}
+#the-video #the-video-title {
+  color: #EE2E1F;
+  font-size: 9vmin;
+  display: none;
+}
+
+#video {
+  width: 70vmax;
+  height: 35vmax;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#contact-us {
+  background-color: white;
+}
+
+#floating-pic-container {
+  position: fixed;
+  bottom: 0vh;
+  right: 5vw;
+  animation-name: dancing;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes dancing {
+  0% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+#floating-pic-container img {
+  width: 20vmin;
+  transition: width 0.125s;
+}
+#floating-pic-container img:hover {
+  width: 30vmin;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #EE2E1F;
+}
+
+/* Handle on hover */
+
+/*# sourceMappingURL=style.css.map */
