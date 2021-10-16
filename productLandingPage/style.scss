@@ -23,6 +23,11 @@ body{
    display: flex;
    flex-direction: column;
    overflow: hidden;
+   background-image:  linear-gradient($main-color,$light-color), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHVbceTVbgVdfJyqcYSrJ-cLAeCpHlrFBA-Q&usqp=CAU");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-blend-mode: lighten;
+   background-size: 100%;
 }
 
 #header{
@@ -82,6 +87,9 @@ body{
    height: 90vh;
    padding: $contents-padding;
    box-shadow: $content-shadow;
+   & > * {
+      border: 1px solid red;
+   }
 }
 
 .page-title-container{
@@ -89,21 +97,26 @@ body{
 }
 
 #the-product{
-   background-color: $light-color;
+   // background-color: $light-color;
    #the-product-title {
       color: $accent-color;
       font-size: $large-font;
       display: none;
    }
-   #page-content-container{
-
+   .page-content-container{
+      display: flex;
+      .products-img{
+         background-color: $accent-color;
+         color: $light-color;
+         text-align: center;
+      }
+      .products-txt{
+         background-color: $light-color;
+         color: $main-color;
+      }
    }
 }
 
-   #the-product-img {
-      width: 80vmin;
-      box-shadow: $content-shadow;
-   }
 
 #the-video{
    background-color: $main-color;
@@ -112,17 +125,18 @@ body{
       font-size: $large-font;
       display: none;
    }
-}
-
    #video{
-      width: 70vmax;
-      height: 35vmax;
+      width: 75vw;
+      height: 80vh;
       border: none;
       box-shadow: $content-shadow;
    }
+}
+
+
 
 #contact-us{
-   background-color: $light-color;
+   // background-color: $light-color;
 }
 
 
@@ -130,7 +144,7 @@ body{
 #floating-pic-container{
    position: fixed;
    bottom: 0vh;
-   right: 5vw;
+   right: 3vw;
    animation-name: dancing;
    animation-duration: 2s;
    animation-iteration-count: infinite;
@@ -163,7 +177,7 @@ body{
  
  /* Track */
  ::-webkit-scrollbar-track {
-   background: white; 
+   background: transparent; 
  }
   
  /* Handle */
