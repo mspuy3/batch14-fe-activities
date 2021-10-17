@@ -26,9 +26,9 @@
    --content-larger-font-size: 1.75rem;
    --content-largest-font-size: 5rem;
 
-   --nav-small-font-size: 2vh;
-   --nav-medium-font-size: 4vh;
-   --nav-large-font-size: 6vh;
+   --nav-small-font-size: 3vh;
+   --nav-medium-font-size: 5vh;
+   --nav-large-font-size: 7vh;
 
    --content-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
@@ -84,10 +84,11 @@ header{
    grid-area: header;
    padding: 0 10vw;
    display: flex;
-   flex-flow: row wrap;
+   flex-flow: row nowrap;
    justify-content: space-between;
    align-items: center;
    box-shadow: var(--content-shadow);
+   background-color: var(--main-color);
 }
 
    #header-img{
@@ -95,17 +96,17 @@ header{
       object-fit: contain;
       filter: var(--drop-shadow);
       animation-name: dancing;
-      animation-duration: 0.25s;
+      animation-duration: 0.0625s;
       animation-iteration-count: infinite;
       animation-direction: alternate;
    }
 
       @keyframes dancing {
          0% {
-         transform: rotate(15deg);
+         transform: rotate(3deg);
          }
          100% {
-         transform: rotate(-15deg);
+         transform: rotate(-3deg);
          }
       }
 
@@ -141,12 +142,12 @@ header{
          }
 
          #nav-bar > ul > li:not(:last-child){
-            margin-right: 10vmin;
+            margin-right: 6vmin;
          }
 
             @media all and (min-aspect-ratio: 5/3){
                #nav-bar > ul > li:not(:last-child){
-                  margin-right: 6vmin;
+                  margin-right: 10vmin;
                }
             }
 
@@ -165,22 +166,13 @@ header{
          #nav-bar > ul > li > a > span {
             display: none;
          }
+         #nav-bar > ul > li{
+            font-size: 4vmin;
+         }
       }
 
-      @media all and (max-aspect-ratio: 3/4){
-         #header-img{
-            height: 5vw;
-            position: fixed;
-            top: 10vh;
-            left: 47vw;
-         }
-         #nav-bar{
-            width: 100%;
-         }
-         #nav-bar > ul > li{
-            font-size: 5vmin;
-         }
-      }
+      
+
 
 /* Main (everytihng else) */
 
@@ -201,7 +193,8 @@ main{
       font-weight: normal;
       }
       100% {
-      font-weight: bolder;
+      font-weight: bold;
+      text-decoration: underline;
       }
    }
 
@@ -211,7 +204,7 @@ main{
 
 section{
    min-height: 92vh;
-   padding: 7vh 5vw;
+   padding: 3vh 5vw;
 }
 
 section a {
@@ -238,8 +231,8 @@ section a > h3:active {
    align-items: center;
 }
 
-#awards{
-   /* background-color: var(--main-color); */
+#awards, #services {
+   background-color: var(--main-color);
    box-shadow: var(--content-shadow);
 }
 
@@ -270,6 +263,9 @@ section a > h3:active {
    display: flex;
    flex-direction: column;
    text-align: center;
+   align-items: center;
+   justify-items: center;
+   justify-content: center;
 }
 
    #projects > *, #services > * {
@@ -348,37 +344,38 @@ section a > h3:active {
 
       #tvc{
          background: linear-gradient(
-            rgba(94, 0, 52, 0.7), 
-            rgba(94, 0, 52, 0.7)
+            rgba(94, 0, 52, 0.9), 
+            rgba(94, 0, 52, 0.9)
           ), url("https://64.media.tumblr.com/e3fef42804472bd926c0219972f1823e/tumblr_ps0wjbHAgg1ueapts_540.gif");
           background-position: center;
       }
 
       #print{
          background: linear-gradient(
-            rgba(94, 0, 52, 0.7), 
-            rgba(94, 0, 52, 0.7)
+            rgba(94, 0, 52, 0.9), 
+            rgba(94, 0, 52, 0.9)
           ), url("https://media4.giphy.com/media/f8hiiWphq4MwWsOQ2B/giphy.gif");
           background-position: center;
       }
 
       #social{
          background: linear-gradient(
-            rgba(94, 0, 52, 0.7), 
-            rgba(94, 0, 52, 0.7)
+            rgba(94, 0, 52, 0.9), 
+            rgba(94, 0, 52, 0.9)
           ), url("https://cdn.dribbble.com/users/473297/screenshots/1533865/socialmedia.gif");
           background-position: center;
       }
 
 
-#work{
+/* #work{
    justify-content: center;
    background: linear-gradient(
       rgba(94, 0, 52, 0.7), 
       rgba(94, 0, 52, 0.7)
     ), url("https://gigil.com.ph/wp-content/themes/thinkbit/img/placeholder-logo.jpg");
    background-position: center;
-}
+} */
+
 
    #work-form-container > form {
       display: flex;
@@ -395,18 +392,25 @@ section a > h3:active {
    #work-form-container > form > #email {
       padding: 1% 5%;
       box-shadow: var(--content-shadow);
+      
    }
-
+   
+   input{
+      font-family : inherit;
+      caret-color: var(--main-color);
+      color: var(--main-color);
+   }
    
    #work-form-container > form > #submit {
       align-self: center;
-      width: 20vw;
+      padding: 1% 5%;
+      width: max-content;
       background-color: var(--white-color);
       box-shadow: var(--content-shadow);
    }
 
    #work-form-container > form > *{
-      transition: 0.5s transform;
+      transition: 0.25s transform;
    }
 
    #work-form-container > form > *:hover {
@@ -460,14 +464,6 @@ section a > h3:active {
          grid-template-columns: 40vw 40vw;
          grid-auto-rows: 40vw;
       }
-
-      /* #services-container{
-         grid-auto-rows: 30vw;
-      } */
-
-      .individual-services{
-         padding: 8%;
-      }
       
 }
 
@@ -478,15 +474,16 @@ section a > h3:active {
       }
 
       .individual-services {
-         padding: 25%;
+         padding: 15%;
       }
-
-      /* .individual-services p {
-         font-size: 100%;
-      } */
 
 }
 
+@media all and (min-aspect-ratio: 2/1) {
+      .individual-services p {
+         font-size: 100%;
+      }
+}
 
 
 
