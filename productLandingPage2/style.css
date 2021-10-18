@@ -68,6 +68,7 @@ p{
 
 body{
    background-color: var(--accent-light-color);
+   /* background-color: var(--white-color); */
    display: grid;
    grid-template-columns: 100vw;
    /* grid-template-rows: 8vh 92vh;
@@ -136,7 +137,19 @@ header{
       #nav-bar > ul > li{
          font-size: var(--nav-small-font-size);
          /* transition: 1s font-size; */
-         transition: 0.5s text-shadow;
+         transition: 0.0625s text-shadow;
+      }
+
+      #nav-bar > ul > li > a {
+         display: flex;
+         width: 110%;
+         justify-content: space-between;
+         align-items: center;
+         font-weight: bold;
+      }
+
+      #nav-bar > ul > li > a > img {
+         height: var(--nav-small-font-size); 
       }
 
                #nav-bar > ul > li:hover{
@@ -169,11 +182,22 @@ header{
       #nav-bar > ul > li > a > span {
          display: none;
       }
-      #nav-bar > ul > li{
-         font-size: 4vmin;
+      #nav-bar > ul > li > a > img {
+         height: 4.5vmin;
+         
       }
+
+      #nav-bar > ul > li > a > img:hover {
+         height: 5.5vmin;
+         
+      }
+
+      #nav-bar > ul > li > a > img:active {
+         filter: var(--drop-shadow); 
+      }
+
       #nav-bar > ul > li:not(:last-child){
-         margin-right: 9vmin;
+         margin-right: 8vmin;
       }
    }
 
@@ -189,7 +213,8 @@ main{
 }
 
 .blinking-link {
-   transition: 1s font-weight ease-in-out;
+   transition: 1s text-shadow ease-in-out;
+   transition: 1s text-decoration ease-in-out;
    animation-name: blinking;
    animation-duration: 1s;
    animation-iteration-count: infinite;
@@ -198,13 +223,17 @@ main{
 
    @keyframes blinking {
       0% {
-         font-weight: normal;
+         /* font-weight: bold; */
+         text-shadow: none;
       }
-      75% {
+      50% {
          /* color: var(--white-color); */
+         text-shadow: var(--text-shadow);
          }
       100% {
-      font-weight: bold;
+      /* font-weight: bold; */
+      text-decoration: underline;
+      text-shadow: var(--text-shadow);
       /* color: var(--main-color); */
       }
    }
@@ -294,7 +323,7 @@ section a > h3:active {
       justify-content: center;
       grid-template-columns: 80vw;
       grid-auto-rows: 80vw;
-      gap: 3vw;
+      gap: 1.5vw 3vw;
    }
 
    .individual-projects, .individual-services {
@@ -432,7 +461,7 @@ section a > h3:active {
    }
 
    #work-form-container > form > *:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
    }
 
    #work-form-container > form > #submit:hover {
@@ -447,13 +476,17 @@ section a > h3:active {
       /* background-color: red; */
    }
 
+   #work-socials-container{
+      margin: 2.5vh;
+   }
+
    .socials-link > img {
       height: 5vh;
    }
 
    .socials-link > img:hover {
       animation-name: spin;
-      animation-duration: 1s;
+      animation-duration: 0.5s;
       animation-iteration-count: infinite;
    }
 
@@ -470,6 +503,9 @@ section a > h3:active {
       height: 10vh;
    }
 
+footer{
+   color: white;
+   }
 
 @media all and (min-aspect-ratio: 4/3) {
    section{
