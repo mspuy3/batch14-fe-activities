@@ -89,7 +89,6 @@ header{
    align-items: center;
    box-shadow: var(--content-shadow);
    /* background-color: var(--main-color); */
-   overflow: hidden;
 }
 
    #header-img{
@@ -104,10 +103,10 @@ header{
 
       @keyframes dancing {
          0% {
-         transform: rotate(5deg);
+         transform: rotate(3deg);
          }
          100% {
-         transform: rotate(-5deg);
+         transform: rotate(-3deg);
          }
       }
 
@@ -129,8 +128,8 @@ header{
 
       #nav-bar > ul > li{
          font-size: var(--nav-small-font-size);
-         text-shadow: var(--text-shadow);
-         transition: 1s font-size;
+         /* transition: 1s font-size; */
+         transition: 0.5s text-shadow;
       }
 
                #nav-bar > ul > li:hover{
@@ -141,7 +140,8 @@ header{
                }
 
                #nav-bar > ul > li:active{
-                  font-size: var(--nav-medium-font-size);
+                  /* font-size: var(--nav-medium-font-size); */
+                  text-shadow: var(--text-shadow);
                }
 
                #nav-bar > ul > li:not(:last-child){
@@ -301,8 +301,8 @@ section a > h3:active {
    }
 
       .individual-projects:hover {
-         border: 1vmin solid var(--white-color);
-         transform: translateY(-15px);
+         border: 0.75vmin solid var(--white-color);
+         transform: translateY(-20px);
       }
 
       .individual-projects:active {
@@ -345,27 +345,30 @@ section a > h3:active {
    padding: 3%;
 }
 
+   .individual-services:hover {
+      transform: translateY(-20px);
+   }
 
       #tvc{
          background: linear-gradient(
-            rgba(94, 0, 52, 0.9), 
-            rgba(94, 0, 52, 0.9)
+            rgba(94, 0, 52, 0.7), 
+            rgba(94, 0, 52, 0.7)
           ), url("https://64.media.tumblr.com/e3fef42804472bd926c0219972f1823e/tumblr_ps0wjbHAgg1ueapts_540.gif");
           background-position: center;
       }
 
       #print{
          background: linear-gradient(
-            rgba(94, 0, 52, 0.9), 
-            rgba(94, 0, 52, 0.9)
+            rgba(94, 0, 52, 0.7), 
+            rgba(94, 0, 52, 0.7)
           ), url("https://media4.giphy.com/media/f8hiiWphq4MwWsOQ2B/giphy.gif");
           background-position: center;
       }
 
       #social{
          background: linear-gradient(
-            rgba(94, 0, 52, 0.9), 
-            rgba(94, 0, 52, 0.9)
+            rgba(94, 0, 52, 0.7), 
+            rgba(94, 0, 52, 0.7)
           ), url("https://cdn.dribbble.com/users/473297/screenshots/1533865/socialmedia.gif");
           background-position: center;
       }
@@ -418,7 +421,7 @@ section a > h3:active {
    }
 
    #work-form-container > form > *:hover {
-      transform: translateY(-15px);
+      transform: translateY(-10px);
    }
 
    #work-form-container > form > #submit:hover {
@@ -426,6 +429,17 @@ section a > h3:active {
       color: var(--white-color);
    }
    
+   #work-socials-container{
+      width: 20%;
+      display: flex;
+      justify-content: space-between;
+      /* background-color: red; */
+   }
+
+   .socials-link > img {
+      height: 5vh;
+   }
+
    .socials-link > img:hover {
       animation-name: spin;
       animation-duration: 1s;
@@ -488,12 +502,6 @@ section a > h3:active {
          font-size: 100%;
       }
 }
-
-
-
-
-
-
 
 
 
