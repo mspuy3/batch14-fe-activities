@@ -75,14 +75,18 @@ body{
       "header"
       "main";
    overflow: hidden;
+   scroll-behavior: smooth;
 }
 
 /* Header (Logo and Navbar) */
 
 header{
    z-index: 999;
-   grid-area: header;
+   position: fixed;
+   /* grid-area: header; */
    padding: 0 10vw;
+   height: 8vh;
+   width: 100%;
    display: flex;
    flex-flow: row nowrap;
    justify-content: space-between;
