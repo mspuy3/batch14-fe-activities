@@ -70,9 +70,12 @@ body{
    background-color: var(--accent-light-color);
    display: grid;
    grid-template-columns: 100vw;
-   grid-template-rows: 8vh 92vh;
+   /* grid-template-rows: 8vh 92vh;
    grid-template-areas: 
       "header"
+      "main"; */
+   grid-template-rows: 100vh;
+   grid-template-areas:
       "main";
    overflow: hidden;
    scroll-behavior: smooth;
@@ -92,7 +95,7 @@ header{
    justify-content: space-between;
    align-items: center;
    box-shadow: var(--content-shadow);
-   /* background-color: var(--main-color); */
+   background-color: var(--accent-light-color);
 }
 
    #header-img{
@@ -211,8 +214,8 @@ main{
    }
 
 section{
-   min-height: 92vh;
-   padding: 3vh 5vw;
+   min-height: 100vh;
+   padding: 5vw;
 }
 
 section a {
@@ -277,7 +280,11 @@ section a > h3:active {
 }
 
    #projects > *, #services > * {
-      margin: 3vh 0;
+      margin: 5vh 0;
+   }
+
+   #projects-title{
+      margin-top: 8vh;
    }
 
    #projects-container, #services-container{
