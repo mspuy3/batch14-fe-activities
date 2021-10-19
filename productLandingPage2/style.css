@@ -529,6 +529,9 @@ footer{
          grid-template-columns: 40vw 40vw;
          grid-auto-rows: 40vw;
       }
+
+      #work-socials-container{
+         width: 20%;
       
 }
 
