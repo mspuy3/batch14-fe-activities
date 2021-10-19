@@ -34,6 +34,8 @@
 
    --drop-shadow: drop-shadow(0px 4px 8px black);
 
+   --drop-shadow-icons: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+
    --select-shadow: drop-shadow(0px 4px 8px white);
 
    --text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1),0px 18px 23px rgba(0,0,0,0.1);
@@ -54,7 +56,7 @@ h2{
 
 h3{
    font-size: var(--content-large-font-size);
-   text-shadow: var(--text-shadow);
+   /* text-shadow: var(--text-shadow); */
    color: var(--white-color);
    font-weight: bold;
 }
@@ -96,13 +98,16 @@ header{
    justify-content: space-between;
    align-items: center;
    box-shadow: var(--content-shadow);
-   background-color: var(--accent-light-color);
+   /* background-color: var(--accent-light-color); */
+   /* background-color: rgba(0, 0, 0, 0.01); */
+   backdrop-filter: blur(10px) saturate(150%) contrast(80%) brightness(80%);
+   -webkit-backdrop-filter: blur(10px) saturate(150%) contrast(80%) brightness(80%);
 }
 
    #header-img{
       height: var(--nav-medium-font-size);
       object-fit: contain;
-      filter: var(--drop-shadow);
+      filter: var(--drop-shadow-icons);
       animation-name: dancing;
       animation-duration: 0.0625s;
       animation-iteration-count: infinite;
@@ -149,7 +154,8 @@ header{
       }
 
       #nav-bar > ul > li > a > img {
-         height: var(--nav-small-font-size); 
+         height: var(--nav-small-font-size);
+         filter: var(--drop-shadow-icons); 
       }
 
                #nav-bar > ul > li:hover{
@@ -213,10 +219,10 @@ main{
 }
 
 .blinking-link {
-   transition: 1s text-shadow ease-in-out;
+   /* transition: 1s text-shadow ease-in-out; */
    transition: 1s text-decoration ease-in-out;
    animation-name: blinking;
-   animation-duration: 1s;
+   animation-duration: 0.5s;
    animation-iteration-count: infinite;
    animation-direction: alternate;
 }
@@ -224,16 +230,16 @@ main{
    @keyframes blinking {
       0% {
          /* font-weight: bold; */
-         text-shadow: none;
+         /* text-shadow: none; */
       }
       50% {
          /* color: var(--white-color); */
-         text-shadow: var(--text-shadow);
+         /* text-shadow: var(--text-shadow); */
          }
       100% {
       /* font-weight: bold; */
       text-decoration: underline;
-      text-shadow: var(--text-shadow);
+      /* text-shadow: var(--text-shadow); */
       /* color: var(--main-color); */
       }
    }
@@ -267,8 +273,9 @@ section a > h3:active {
 #home, #awards {
    display: flex;
    flex-flow: row wrap;
-   justify-content: space-between;
+   justify-content: space-around;
    align-items: center;
+   padding: 25vh 18vw;
 }
 
 #awards, #services {
@@ -284,12 +291,9 @@ section a > h3:active {
          line-height: 1.5;
       }
 
-         #awards > div > h3 {
-            padding: 3% 0%;
-         }
-
       #home > iframe, #awards > img {
          width: 90vw;
+         margin: 3vh 0;
          object-fit: contain;
          border-radius: 1vmax;
          filter: var(--drop-shadow);
@@ -309,10 +313,6 @@ section a > h3:active {
 }
 
    #projects > *, #services > * {
-      margin: 5vh 0;
-   }
-
-   #projects-title{
       margin-top: 8vh;
    }
 
@@ -323,7 +323,7 @@ section a > h3:active {
       justify-content: center;
       grid-template-columns: 80vw;
       grid-auto-rows: 80vw;
-      gap: 1.5vw 3vw;
+      gap: 0.5vh 1.5vw;
    }
 
    .individual-projects, .individual-services {
@@ -470,7 +470,7 @@ section a > h3:active {
    }
    
    #work-socials-container{
-      width: 20%;
+      width: 40%;
       display: flex;
       justify-content: space-between;
       /* background-color: red; */
@@ -534,8 +534,8 @@ footer{
 
 @media all and (min-aspect-ratio: 16/9) {
       #projects-container, #services-container {
-         grid-template-columns: 20vw 20vw 20vw;
-         grid-auto-rows: 20vw;
+         grid-template-columns: 18vw 18vw 18vw;
+         grid-auto-rows: 18vw;
       }
 
       .individual-services {
@@ -565,12 +565,13 @@ footer{
  
  /* Track */
  ::-webkit-scrollbar-track {
-   background: var(--accent-light-color);  
+   background: var(--main-color);
  }
   
  /* Handle */
  ::-webkit-scrollbar-thumb {
-   background: var(--main-color); 
+   background: var(--accent-light-color);  
+   
  }
 
  
