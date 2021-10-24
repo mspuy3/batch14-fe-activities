@@ -1,0 +1,151 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root{
+   --nav-height: 6vh;
+   --nav-spacing: 2vh;
+   --nav-background-color: black;
+   --nav-main-color: white;
+   
+}
+
+/* Mobile topbar with hamburger menu */
+
+nav #topbar{
+   position: fixed;
+   top: 0;
+   z-index: 999;
+
+   width: 100%;
+   min-height: var(--nav-height);
+
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-between;
+   align-items: center;
+   align-content: space-between;
+
+   background-color: var(--nav-background-color);
+   color: var(--nav-main-color);
+}
+
+   nav #topbar > * {
+      margin: var(--nav-spacing);
+      caret-color: none;
+   }
+
+   nav button {
+      background-color: transparent;
+      border: none;
+   }
+
+   nav .icon {
+      color: var(--nav-main-color);
+   }
+
+   #collapsible-container {
+      position: fixed;
+      top: var(--nav-height);
+      
+      width: 100%;
+
+      transform: scale(1, 0);
+      transform-origin: top;
+
+      flex-basis: 100%;
+
+      padding: 0 var(--nav-spacing);
+
+      -webkit-transition: transform 0.25s ease-in-out;
+      transition: transform 0.25s ease-in-out;
+
+      background-color: blue;
+   }
+
+   #collapsible-container ul {
+      list-style: none;
+      text-align: center;
+      padding-top: var(--nav-spacing);
+   }
+   
+   #collapsible-container ul li {
+      background-color: red;
+      margin-bottom: calc(var(--nav-spacing)/2);
+   }
+
+   .nav-link {
+      text-decoration: none;
+      color: var(--nav-main-color);
+   }
+
+main {
+   margin: var(--nav-height);
+   padding: var(--nav-spacing);
+}
+
+/* Side Nav bar starting at 4x3 */
+
+@media (min-aspect-ratio: 4/3) {
+
+   body{
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-rows: auto 5vh;
+      grid-template-areas: 
+      "nav main"
+      "nav footer";
+      overflow: hidden;
+   }
+
+   nav{
+      grid-area: nav;
+      background-color: yellow;
+      display: flex;
+      flex-flow: column nowrap;
+      
+   }
+
+
+         nav #topbar{
+            all: unset;
+            border: 1px solid red;
+         }
+
+         nav button {
+            display: none;
+         }
+
+         #collapsible-container {
+            all: unset;
+            overflow-y: scroll;
+         }
+
+               #collapsible-container ul {
+                  list-style: none;
+                  text-align: center;
+                  padding-top: var(--nav-spacing);
+               }
+               
+               #collapsible-container ul li {
+                  background-color: red;
+                  margin-bottom: calc(var(--nav-spacing)/2);
+               }
+            
+               .nav-link {
+                  text-decoration: none;
+                  color: var(--nav-main-color);
+               }
+
+   main{
+      grid-area: main;
+      overflow-y: scroll;
+   }
+
+   footer{
+      grid-area: footer;
+      
+   }
+}
