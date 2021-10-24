@@ -1,0 +1,76 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+
+/* Include the padding and border in an element's total width and height */
+* {
+   box-sizing: border-box;
+   font-family: 'Josefin Sans', sans-serif;
+ }
+
+body {
+   overflow-y: scroll;
+  
+}
+
+
+#name-input-container {
+
+   position: fixed;
+   
+   border: 1px solid red;
+   transform: scale(1, 1);
+   transform-origin: top;
+   transition: all 1s ease-in-out;
+}
+
+#page-container {
+   
+   /* position: fixed; */
+   
+   border: 1px solid red;
+
+   transform: scale(1, 1);
+   transform-origin: top;
+
+   transition: all 1s ease-in-out 2s;
+}
+
+.opacity-effect {
+   opacity: 1;
+   transition: all 1s ease-in-out;
+}
+
+#new-quote-container {
+   
+   position: fixed;
+   
+   border: 1px solid red;
+
+   transform: scale(1, 0);
+   transform-origin: top;
+
+   transition: all 0.25s ease-in-out;
+}
+
+#new-focus-container {
+   
+   position: fixed;
+   
+   border: 1px solid red;
+
+   transform: scale(1, 0);
+   transform-origin: top;
+
+   transition: all 0.25s ease-in-out;
+}
+
+#todo-container {
+   position: fixed;
+
+   transform: scale(0, 0);
+
+   transform-origin: right bottom;
+
+   transition: all 0.5s ease-in-out;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+   <link rel="stylesheet" href="styles-todolist.css">
+   <link rel="stylesheet" href="styles.css">
+
+   <title>Momentum Clone</title>
+</head>
+
+<body>
+
+   <div id="name-input-container">
+      <input type="text" id="name-input" placeholder="Your name here..." required></input>
+      <button id="name-input-button">Let's Start!</button> 
+   </div>
+
+   <div id="page-container">
+
+      <p class="opacity-effect">Hi, <span id='name'></span>!</p>
+
+      <p class="opacity-effect">Today is <span id='date'></span>.</p>
+
+      <p class="opacity-effect">The time is <span id='clock'></span>.</p>
+
+      <p class="opacity-effect">Your quote of the day: <span id='quote'></span></p>
+
+      <button id="next-quote-button" class="opacity-effect">Next Quote</button>
+      <button id="new-quote-button" class="opacity-effect">New Quote</button>
+
+      <div id="new-quote-container">
+         <input type="text" id="add-quote-input" placeholder="Add quote here..." required></input>
+         <button id="add-quote-button">Add Quote</button> 
+         <button id="show-added-button">Show Added</button> 
+      </div>
+
+      <p id="focus-container" class="opacity-effect">Your focus of the day: <span id='focus'>not yet set.</span></p>
+
+      <button id="new-focus-button" class="opacity-effect">New Focus</button>
+
+      <div id="new-focus-container">
+         <input type="text" id="set-focus-input" placeholder="Set focus here..." required></input>
+         <button id="set-focus-button">Set Focus</button> 
+      </div>
+
+      
+      <br>
+
+      <button id="show-todo-button" class="opacity-effect">Show To-Do List</button>
+
+      <div id="todo-container" class="opacity-effect">
+
+         <div id="myDIV" class="header">
+         <h2>My To-Do List</h2>
+         <input type="text" id="todo-input" placeholder="Title...">
+         <span onclick="newElement()" class="addBtn">Add</span>
+         </div>     
+         
+         <ul id="myUL">
+         <li>Let's start!</li>
+
+         </ul>
+
+      </div>
+
+   </div>
+
+</body>
+
+<script src="script-namegreet.js"></script>
+<script src="script-timedate.js"></script>
+<script src="script-quotes.js"></script>
+<script src="script-focus.js"></script>
+<script src="script-todolist.js"></script>
+
+
+</html>
