@@ -1,0 +1,163 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+   background: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 5%;
+   caret-color: rgba(0,0,0,0); 
+}
+
+
+:root{
+   --main-dark-color: #14279B;
+   --main-light-color: #E6E6E6;
+   --accent-dark-color: #3D56B2;
+   --accent-light-color: #5C7AEA;
+   --accent-alert-color: palevioletred;
+
+   --border-radius: 2vmin;
+}
+
+#todo-main-container{
+   width: 60vmin;
+   height: auto;
+   background: var(--main-light-color);
+   border-radius: var(--border-radius);
+   display: flex;
+   flex-flow: column wrap;
+   padding: 2.5%;
+}
+
+#todo-main-container > *:not(:last-child) {
+   margin-bottom: 2.5vmin;
+}
+
+
+#todo-input-container{
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   height: 10vmin;
+   caret-color: var(--main-dark-color); 
+}
+
+      #todo-input{
+         width: 60%;
+         border-radius: var(--border-radius);
+         border: none;
+         padding: 2.5%;
+      }
+
+      #todo-input-button{
+         width: 30%;
+         background-color: var(--main-dark-color);
+         color: var(--main-light-color);
+         border: none;
+         border-radius: var(--border-radius);
+      }
+
+      #todo-input-button:active{
+         color: var(--main-dark-color);
+         background-color: var(--main-light-color);
+         border: 1px solid var(--main-dark-color);
+      }
+
+#todo-list-container{
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: center;
+   align-items: center;
+}
+
+      .todo-item-container{
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         background-color: var(--accent-light-color);
+         padding: 2.5%;
+         border: none;
+         border-radius: var(--border-radius);
+         width: 55vmin;
+         height: minmax(10vmin, auto);
+         margin: 2.5%;
+         font-weight: bold;
+         flex-wrap: nowrap;
+         
+      }
+            .todo-item-container p {
+               white-space: wrap;
+               overflow: hidden;
+               text-overflow: ellipsis;
+            }
+
+            .todo-item{
+               color: var(--main-light-color);
+               text-transform: capitalize;
+               max-width: 35vmin;
+               
+            }
+
+            .todo-item-delete-button{
+               cursor: pointer;
+               width: 6vmin;
+               height: 6vmin;
+               text-align: center;
+               border-radius: 50%;
+               background-color: var(--accent-alert-color);
+               color: var(--main-light-color);
+               outline: none;
+               border: none;
+               align-items: center;
+            }
+
+            .todo-item-delete-button:active {
+               color: var(--accent-alert-color);
+               background-color: var(--main-light-color);
+            }
+
+            .todo-item-done-button{
+               cursor: pointer;
+               width: 6vmin;
+               height: 6vmin;
+               text-align: center;
+               border-radius: 50%;
+               background-color: var(--main-dark-color);
+               color: var(--main-light-color);
+               outline: none;
+               border: none;
+               align-items: center;
+            }
+
+            .todo-item-done-button:active {
+               background-color: var(--main-light-color);
+               color: var(--main-dark-color);
+            }
+
+            .checked {
+               text-decoration: line-through var(--main-dark-color);
+            }
+
+
+#todo-clear-button{
+  background-color: var(--accent-alert-color);
+  color: var(--main-light-color);
+  width: 100%;
+  height: 10vmin;
+  border: none;
+  border-radius: var(--border-radius);
+  text-transform: capitalize;
+  font-weight: bold;
+  cursor: pointer;
+  outline-style: none;
+}
+
+#todo-clear-button:active{
+   color: var(--accent-alert-color);
+   background-color: var(--main-light-color);
+}
