@@ -54,16 +54,20 @@
 
       <div id="todo-container" class="opacity-effect">
 
-         <div id="myDIV" class="header">
-         <h2>My To-Do List</h2>
-         <input type="text" id="todo-input" placeholder="Title...">
-         <span onclick="newElement()" class="addBtn">Add</span>
-         </div>     
-         
-         <ul id="myUL">
-         <li>Let's start!</li>
-
-         </ul>
+         <div class="container">
+            <div class="myTodo">
+                <div class="inputvalue">
+                    <input class="inputVal" type="text" placeholder="Add your task" value="">
+                    <button class="btn">Add Task</button>
+                </div>
+                
+               
+                <div class="todoLists">
+                    
+                </div>
+                <button class="clearTask" onclick="clearTask()">Clear all Task</button>
+            </div>
+        </div>
 
       </div>
 

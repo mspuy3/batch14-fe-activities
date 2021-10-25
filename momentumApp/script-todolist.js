@@ -32,57 +32,65 @@ document.getElementById("show-todo-button").addEventListener("click", showTodo);
 //End of Script for Show Todo button
 
 
+// Todo core functions
 
-var todoListItems = document.getElementsByTagName("LI");
+const inputVal = document.getElementsByClassName('inputVal')[0];
 
-for (let i = 0; i < todoListItems.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  todoListItems[i].appendChild(span);
+const addTaskBtn = document.getElementsByClassName('btn')[0];
+
+
+addTaskBtn.addEventListener('click', function (){
+ 
+if(inputVal.value.trim()!=0){
+      let localItems = JSON.parse(localStorage.getItem('localItem'))
+   if(localItems === null){
+        taskList = []
+
+   }else{
+       taskList = localItems;
+   }
+   taskList.push(inputVal.value)
+   localStorage.setItem('localItem', JSON.stringify(taskList)); 
 }
 
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-for (let i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
+   showItem()
+})
+
+function showItem(){
+   let localItems = JSON.parse( localStorage.getItem('localItem'))
+   if(localItems === null){
+        taskList = []
+
+   }else{
+       taskList = localItems;
+   }
+
+
+let html = '';
+let itemShow = document.querySelector('.todoLists');
+
+taskList.forEach((data, index ) => {
+   html += `
+   <div class="todoList">
+   <p class="pText">${data}</p>
+   <button class="deleteTask" onClick="deleteItem(${index})">x</button>
+   </div>
+   `
+})
+itemShow.innerHTML = html;
 }
 
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
+showItem()
 
-// Create a new list item when clicking on the "Add" button
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("todo-input").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("todo-input").value = "";
+function deleteItem(index){
+   let localItems = JSON.parse( localStorage.getItem('localItem'))
+   taskList.splice(index, 1)
+   localStorage.setItem('localItem', JSON.stringify(taskList));
+   showItem()
+}
 
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
+function clearTask(){
+   
+localStorage.clear()
+showItem()
 }
