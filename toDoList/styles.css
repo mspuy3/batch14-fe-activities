@@ -69,6 +69,8 @@ body{
       }
 
 #todo-list-container{
+   width: 100%;
+   /* border: 1px solid red; */
    display: flex;
    flex-flow: column nowrap;
    justify-content: center;
@@ -83,24 +85,25 @@ body{
          padding: 2.5%;
          border: none;
          border-radius: var(--border-radius);
-         width: 55vmin;
+         width: 100%;
          height: minmax(10vmin, auto);
          margin: 2.5%;
          font-weight: bold;
          flex-wrap: nowrap;
          
       }
+
             .todo-item-container p {
                white-space: wrap;
                overflow: hidden;
                text-overflow: ellipsis;
+               text-align: center;
             }
 
             .todo-item{
                color: var(--main-light-color);
                text-transform: capitalize;
                max-width: 35vmin;
-               
             }
 
             .todo-item-delete-button{
