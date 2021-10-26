@@ -30,9 +30,9 @@ function newFocus(){
 
 }
 
-//Script for New Quote button
+//Script for New focus button
 document.getElementById("new-focus-button").addEventListener("click", newFocus);
-//End of Script for Add Quote button
+//End of Script for Add focus button
 
 
 
@@ -42,6 +42,9 @@ let focusElement = document.getElementById('focus');
 function setFocus() {
 
    if (setFocusInput.value.length != 0) {
+
+
+   
    focusElement.textContent = setFocusInput.value;
    setFocusInput.value = "";
    setFocusInput.placeholder = "Re-set focus here...";

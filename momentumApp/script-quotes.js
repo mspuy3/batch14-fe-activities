@@ -27,8 +27,22 @@ const listQuotes = [
 
    function displayQuote() {
 
-      randomQuoteIndex = Math.floor(Math.random() * listQuotes.length);
-      quoteElement.textContent = listQuotes[randomQuoteIndex];
+      let storedQuotesValues = JSON.parse( localStorage.getItem('storedQuotesKey'))
+   
+      if(storedQuotesValues === null) {
+
+         localStorage.setItem('storedQuotesKey', JSON.stringify(listQuotes));
+         let storedQuotesValues = JSON.parse( localStorage.getItem('storedQuotesKey'));
+         
+         randomQuoteIndex = Math.floor(Math.random() * storedQuotesValues.length);
+         quoteElement.textContent = storedQuotesValues[randomQuoteIndex];
+
+      } else {
+
+         randomQuoteIndex = Math.floor(Math.random() * storedQuotesValues.length);
+         quoteElement.textContent = storedQuotesValues[randomQuoteIndex];
+      
+      }
 
    }
 
@@ -78,9 +92,13 @@ const listQuotes = [
    function addQuote() {
 
       if (addedQuoteInput.value.length != 0) {
-      listQuotes.push(addedQuoteInput.value);
-      addedQuoteInput.value = "";
-      addedQuoteInput.placeholder = "You can add more.";
+
+         let storedQuotesValues = JSON.parse( localStorage.getItem('storedQuotesKey'));
+         storedQuotesValues.push(addedQuoteInput.value)
+         localStorage.setItem('storedQuotesKey', JSON.stringify(storedQuotesValues)); 
+         
+         addedQuoteInput.value = "";
+         addedQuoteInput.placeholder = "You can add more.";
       }
 
    }
@@ -91,9 +109,23 @@ const listQuotes = [
 
 
    function showAdded() {
-      quoteElement.textContent = listQuotes[listQuotes.length - 1];
+      let storedQuotesValues = JSON.parse( localStorage.getItem('storedQuotesKey'));
+      quoteElement.textContent = storedQuotesValues[storedQuotesValues.length - 1];
    }
 
    //Script for Show Added button
       document.getElementById("show-added-button").addEventListener("click", showAdded);
    //End of Script for Show Added button
+
+
+
+
+//Script for Reset List button
+   function resetList(){
+      localStorage.removeItem('storedQuotesKey')
+      displayQuote()
+   }
+
+
+      document.getElementById("reset-list-button").addEventListener("click", resetList);
+//End of Script for Reset List button

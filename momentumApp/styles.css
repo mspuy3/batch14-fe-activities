@@ -1,45 +1,165 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
-
-/* Include the padding and border in an element's total width and height */
-* {
+*{
+   margin: 0;
+   padding: 0;
    box-sizing: border-box;
    font-family: 'Josefin Sans', sans-serif;
- }
+}
 
-body {
-   overflow-y: scroll;
-  
+body{
+   background-image: url('https://static01.nyt.com/images/2020/03/25/smarter-living/00sl-coronaanxiety-print/00sl-coronaanxiety-videoSixteenByNineJumbo1600.jpg');
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 5%;
+   caret-color: rgba(0,0,0,0);
+   overflow-y: scroll; 
+}
+
+
+:root{
+   --main-dark-color: #14279B;
+   --main-light-color: #E6E6E6;
+   --accent-dark-color: #3D56B2;
+   --accent-light-color: #5C7AEA;
+   --accent-alert-color: palevioletred;
+
+   --border-radius: 2vmin;
+
+   --content-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+   --drop-shadow: drop-shadow(0px 4px 8px black);
+
+   --text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1),0px 18px 23px rgba(0,0,0,0.1);
+
 }
 
 
 #name-input-container {
 
    position: fixed;
-   
-   border: 1px solid red;
-   transform: scale(1, 1);
+   top: 33%;
+
+   /* border: 1px solid red; */
+
+   opacity: 0;
+
+   transform: scale(1, 0);
    transform-origin: top;
    transition: all 1s ease-in-out;
+   display: flex;
+   flex-flow: column nowrap;
+   align-items: center;
 }
+
+
+         #name-input{
+            width: 75vw;
+            height: auto;
+            margin-bottom: 5vh;
+            padding: 0;
+
+            border: none;
+            outline: none;
+            background: none;
+            border-bottom: 0.25vh solid var(--main-dark-color);
+            caret-color: var(--accent-dark-color);
+
+            font-size: 10vh;
+            color: var(--main-dark-color);
+            text-align: center;                        
+         }
+
+         #name-input::placeholder {
+            color: var(--accent-dark-color);
+            opacity: 0.5;
+          }
+
+         #name-input-button{
+            width: auto;
+            height: auto;
+            padding: 1.25% 2.5%; 
+
+            border:none;
+            border-radius: var(--border-radius);
+            background: var(--accent-dark-color);
+
+            font-size: 3vh;
+            color: var(--main-light-color);
+
+         }
+
+         #name-input-button:hover {
+            box-shadow: var(--content-shadow);
+         }
+
+         #name-input-button:active {
+            box-shadow: var(--content-shadow);
+            background: var(--main-light-color);
+            color: var(--accent-dark-color);
+         }
+
+
+         
+
+
+
 
 #page-container {
    
-   /* position: fixed; */
-   
+   position: fixed;
+   top: 5vh;
+
+   height: 90vh; 
+   width: 90vw;
+
    border: 1px solid red;
 
-   transform: scale(1, 1);
+   transform: scale(1, 0);
    transform-origin: top;
 
    transition: all 1s ease-in-out 2s;
+   display: flex;
+   flex-flow: column wrap;
 }
 
 .opacity-effect {
    opacity: 1;
-   transition: all 1s ease-in-out;
+   transition: all 1.5s ease-in-out;
 }
+
+
+#name-container{   
+   width: 100%;
+   padding: 5vh 0;
+
+   /* background: red; */
+
+   font-size: 15vmin;
+   text-align: center;
+   color: var(--main-light-color);
+   /* text-shadow: var(--text-shadow); */
+}
+
+
+#timedate-container {
+      width: 100%;
+      padding-bottom: 5vh;
+
+      /* background: red; */
+
+      font-size: 3vmin;
+      text-align: center;
+      color: var(--main-light-color);
+      line-height: 5vmin;
+      /* text-shadow: var(--text-shadow); */
+}
+
+#date, #clock {
+   color: var(--main-dark-color);
+}
+
 
 #new-quote-container {
    
@@ -66,7 +186,11 @@ body {
 }
 
 #todo-container {
+   z-index: 999;
    position: fixed;
+   bottom: 3vh;
+   right: 3vw;
+   
 
    transform: scale(0, 0);
 

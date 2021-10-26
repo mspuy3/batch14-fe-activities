@@ -14,59 +14,69 @@
 
 <body>
 
-   <div id="name-input-container">
+   <div id="name-input-container"> 
       <input type="text" id="name-input" placeholder="Your name here..." required></input>
       <button id="name-input-button">Let's Start!</button> 
    </div>
 
    <div id="page-container">
+      
+      <div id="name-container">
+         <p class="opacity-effect">Hi, <span id='name'></span>!</p>
+      </div>
 
-      <p class="opacity-effect">Hi, <span id='name'></span>!</p>
+      <div id="timedate-container">
 
-      <p class="opacity-effect">Today is <span id='date'></span>.</p>
+         <p class="opacity-effect">Today is <br> <span id='date'></span>.</p>
 
-      <p class="opacity-effect">The time is <span id='clock'></span>.</p>
+         <p class="opacity-effect">The time is <br> <span id='clock'></span>.</p>
+
+      </div>
+
 
       <p class="opacity-effect">Your quote of the day: <span id='quote'></span></p>
 
-      <button id="next-quote-button" class="opacity-effect">Next Quote</button>
-      <button id="new-quote-button" class="opacity-effect">New Quote</button>
-
-      <div id="new-quote-container">
-         <input type="text" id="add-quote-input" placeholder="Add quote here..." required></input>
-         <button id="add-quote-button">Add Quote</button> 
-         <button id="show-added-button">Show Added</button> 
-      </div>
-
       <p id="focus-container" class="opacity-effect">Your focus of the day: <span id='focus'>not yet set.</span></p>
 
-      <button id="new-focus-button" class="opacity-effect">New Focus</button>
+      
 
       <div id="new-focus-container">
          <input type="text" id="set-focus-input" placeholder="Set focus here..." required></input>
          <button id="set-focus-button">Set Focus</button> 
       </div>
 
+      <div id="new-quote-container">
+         <input type="text" id="add-quote-input" placeholder="Add quote here..." required></input>
+         <button id="add-quote-button">Add Quote</button> 
+         <button id="show-added-button">Show Added</button>
+         <button id="reset-list-button">Reset List</button>
+      </div>
+
       
+      <div id="buttons-container">
+         <button id="name-change-button" class="opacity-effect">Change Name</button> 
+         <button id="next-quote-button" class="opacity-effect">Next Quote</button>
+         <button id="new-quote-button" class="opacity-effect">New Quote</button>
+         <button id="new-focus-button" class="opacity-effect">New Focus</button>
+      </div>
+
       <br>
 
       <button id="show-todo-button" class="opacity-effect">Show To-Do List</button>
 
       <div id="todo-container" class="opacity-effect">
 
-         <div class="container">
-            <div class="myTodo">
-                <div class="inputvalue">
-                    <input class="inputVal" type="text" placeholder="Add your task" value="">
-                    <button class="btn">Add Task</button>
-                </div>
-                
-               
-                <div class="todoLists">
-                    
-                </div>
-                <button class="clearTask" onclick="clearTask()">Clear all Task</button>
+         <div id="todo-main-container">
+        
+            <div id="todo-input-container">
+                <input id="todo-input" type="text" placeholder="Add your To-do here" value="">
+                <button id="todo-input-button">Add To-do</button>
             </div>
+            
+            <div id="todo-list-container"></div>
+    
+            <button id="todo-clear-button">Clear all To-do</button>
+    
         </div>
 
       </div>
