@@ -1,5 +1,3 @@
-
-
 let focusContainer = document.getElementById('focus-container');
 
 let newfocusContainer = document.getElementById('new-focus-container');
@@ -12,7 +10,7 @@ function newFocus(){
 
    if (newFocusShowCounter == 0) {
       
-      newfocusContainer.style.position = "relative";
+      newfocusContainer.style.position = "fixed";
       newfocusContainer.style.transform = "scale(1,1)";
       document.getElementById("new-focus-button").textContent = "Hide New Focus";
       console.log("SHOW!");
@@ -43,11 +41,12 @@ function setFocus() {
 
    if (setFocusInput.value.length != 0) {
 
+      localStorage.setItem('storedFocusKey', JSON.stringify(setFocusInput.value));
 
-   
-   focusElement.textContent = setFocusInput.value;
-   setFocusInput.value = "";
-   setFocusInput.placeholder = "Re-set focus here...";
+      focusElement.textContent = setFocusInput.value;
+      
+      setFocusInput.value = "";
+      setFocusInput.placeholder = "Re-set focus here...";
    }
 
 }
@@ -55,3 +54,28 @@ function setFocus() {
 //Script for Add Quote button
 document.getElementById("set-focus-button").addEventListener("click", setFocus);
 //End of Script for Add Quote button
+
+function showFocus() {
+
+   console.log("showFOcus ran");
+
+   let storedFocusValue = JSON.parse(localStorage.getItem('storedFocusKey'));
+
+   if(storedFocusValue === null) {
+      focusElement.textContent = "No Focus Set";
+   } else {
+      focusElement.textContent = storedFocusValue;
+   }
+
+}
+
+window.onload = showFocus();
+
+//Script for Add Quote button
+document.getElementById("clear-focus-button").addEventListener("click", clearFocus);
+//End of Script for Add Quote button
+
+function clearFocus(){
+   localStorage.removeItem('storedFocusKey')
+   showFocus()
+}

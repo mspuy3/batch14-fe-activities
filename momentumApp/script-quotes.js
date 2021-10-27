@@ -63,9 +63,9 @@ const listQuotes = [
 
       if (newQuoteShowCounter == 0) {
          
-         newQuoteContainer.style.position = "relative";
+         newQuoteContainer.style.position = "fixed";
          newQuoteContainer.style.transform = "scale(1,1)";
-         document.getElementById("new-quote-button").textContent = "Hide New Quote";
+         document.getElementById("new-quote-button").textContent = "Hide Add Quote";
          console.log("SHOW!");
          newQuoteShowCounter = 1;
       

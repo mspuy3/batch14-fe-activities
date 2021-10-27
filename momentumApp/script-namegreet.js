@@ -27,6 +27,11 @@ function hidePage() {
    }else{
       nameElement.textContent = String(storedNameValue);
       pageContainer.style.transform = "scale(1,1)";
+      
+      for( let i=0; i < opacityEffect.length; i++){
+         opacityEffect[i].style.opacity = "1";
+      }
+      
    }
 
 }

@@ -1,23 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
-*{
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   font-family: 'Josefin Sans', sans-serif;
-}
-
-body{
-   background-image: url('https://static01.nyt.com/images/2020/03/25/smarter-living/00sl-coronaanxiety-print/00sl-coronaanxiety-videoSixteenByNineJumbo1600.jpg');
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin: 5%;
-   caret-color: rgba(0,0,0,0);
-   overflow-y: scroll; 
-}
-
-
 :root{
    --main-dark-color: #14279B;
    --main-light-color: #E6E6E6;
@@ -25,6 +7,9 @@ body{
    --accent-light-color: #5C7AEA;
    --accent-alert-color: palevioletred;
 
+   --frosted-back-color: rgba(230,230,230,.15);
+
+   --blur-amount: blur(5px);
    --border-radius: 2vmin;
 
    --content-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -34,6 +19,30 @@ body{
    --text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1),0px 18px 23px rgba(0,0,0,0.1);
 
 }
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+   background: url('https://static01.nyt.com/images/2020/03/25/smarter-living/00sl-coronaanxiety-print/00sl-coronaanxiety-videoSixteenByNineJumbo1600.jpg') no-repeat;
+
+   -moz-background-size: cover;
+   -webkit-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   caret-color: rgba(0,0,0,0);
+   overflow: hidden;
+}
+
 
 
 #name-input-container {
@@ -102,37 +111,33 @@ body{
 
 
          
-
-
-
-
 #page-container {
    
    position: fixed;
    top: 5vh;
 
    height: 90vh; 
-   width: 90vw;
+   width: 95vw;
 
-   border: 1px solid red;
+   /* border: 1px solid red; */
 
    transform: scale(1, 0);
    transform-origin: top;
 
-   transition: all 1s ease-in-out 2s;
+   transition: all 1s ease-in-out 1s;
    display: flex;
    flex-flow: column wrap;
 }
 
 .opacity-effect {
-   opacity: 1;
-   transition: all 1.5s ease-in-out;
+   opacity: 0;
+   transition: opacity 3s ease-in-out;
 }
 
 
 #name-container{   
    width: 100%;
-   padding: 5vh 0;
+   padding: 1vh 0;
 
    /* background: red; */
 
@@ -145,25 +150,114 @@ body{
 
 #timedate-container {
       width: 100%;
-      padding-bottom: 5vh;
+      padding-bottom: 3vh;
 
       /* background: red; */
 
       font-size: 3vmin;
       text-align: center;
-      color: var(--main-light-color);
+      color: var(--accent-dark-color);
       line-height: 5vmin;
       /* text-shadow: var(--text-shadow); */
 }
 
-#date, #clock {
+            #date, #clock {
+               color: var(--main-dark-color);
+               font-size: 5vmin;
+            }
+
+#quote-container{
+
+   padding-bottom: 3vh;
+
+   font-size: 3vmin;
+   text-align: center;
    color: var(--main-dark-color);
+   line-height: 5vmin;
 }
+
+#focus-container{
+   font-size: 3vmin;
+   text-align: center;
+   color: var(--accent-dark-color);
+   line-height: 5vmin;
+}
+
+   #focus{
+      color: var(--main-dark-color);
+      font-size: 5vmin;
+   }
+
+#new-focus-container {
+   position: fixed;
+   top: 63vh;
+   left: 37.5vw;
+   
+   display: flex;
+   flex-flow: column nowrap;
+   width: 20vw;
+   align-items: center;
+
+   border: none;
+
+   /* border: 1px solid red; */
+
+   transform: scale(1, 0);
+   transform-origin: top;
+
+   transition: all 0.5s ease-in-out;
+}
+
+
+            #set-focus-input{
+               border: none;
+               outline: none;
+               background: none;
+               border-bottom: 0.25vh solid var(--main-dark-color);
+               caret-color: var(--accent-dark-color);
+
+               font-size: 3vh;
+               color: var(--main-dark-color);
+               text-align: center; 
+
+               margin-bottom: 2vh;
+
+            }
+
+            #set-focus-input::placeholder {
+               color: var(--accent-dark-color);
+               opacity: 0.5;
+            }
+
+            #set-focus-button{
+               height: 8vh;
+               width: 20vh;
+
+               /* background-color: var(--frosted-back-color);  
+               backdrop-filter: var(--blur-amount); */
+
+               background: var(--main-dark-color);
+
+               border:none;
+               border-radius: var(--border-radius);
+
+               font-size: 3vh;
+               color: var(--main-light-color);
+
+               transition: all 0.5s ease-in-out;
+            }
+
+            #set-focus-button:hover {
+               background: var(--main-light-color);
+               box-shadow: var(--drop-shadow);
+               color: var(--main-dark-color);
+            }
 
 
 #new-quote-container {
-   
    position: fixed;
+   bottom: 8vh;
+   left: 0vw;
    
    border: 1px solid red;
 
@@ -173,23 +267,59 @@ body{
    transition: all 0.25s ease-in-out;
 }
 
-#new-focus-container {
-   
+
+
+
+#buttons-container{
+   /* border: 1px solid red; */
    position: fixed;
-   
-   border: 1px solid red;
-
-   transform: scale(1, 0);
-   transform-origin: top;
-
-   transition: all 0.25s ease-in-out;
+   bottom: 0vh;
+   display: flex;
+   flex-flow: row wrap;
 }
+
+#buttons-container > * {
+   z-index: 999;
+   
+   height: 4vh;
+   width: 25vh;
+
+   background: var(--frosted-back-color);
+
+   border:none;
+   border-radius: var(--border-radius);
+
+   font-size: 3vh;
+   color: var(--main-dark-color);
+
+   margin-right: 4vh;
+
+   transition: all 0.5s ease-in-out;
+}
+
+#buttons-container > *:hover {
+   background: var(--main-dark-color);
+   color:var(--main-light-color);
+   box-shadow: var(--content-shadow);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 #todo-container {
    z-index: 999;
    position: fixed;
-   bottom: 3vh;
-   right: 3vw;
+   bottom: 10vh;
+   right: 0vw;
    
 
    transform: scale(0, 0);
@@ -197,4 +327,34 @@ body{
    transform-origin: right bottom;
 
    transition: all 0.5s ease-in-out;
+
+}
+
+#show-todo-button{
+   z-index: 999;
+   position: fixed;
+   bottom: 0vh;
+   right: 0vw;
+   
+   height: 6vh;
+   width: 20vh;
+
+   /* background-color: var(--frosted-back-color);  
+   backdrop-filter: var(--blur-amount); */
+
+   background: var(--main-dark-color);
+
+   border: none;
+   border-radius: var(--border-radius);
+
+   font-size: 3vh;
+   color: var(--main-light-color);
+
+   transition: all 0.5s ease-in-out;
+}
+
+#show-todo-button:hover {
+   background: var(--main-light-color);
+   box-shadow: var(--content-shadow);
+   color: var(--main-dark-color);
 }
