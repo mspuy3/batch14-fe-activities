@@ -5,9 +5,10 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
    <link rel="stylesheet" href="styles-todolist.css">
-   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="styles-final.css">
 
    <title>Momentum Clone</title>
 </head>
@@ -19,24 +20,24 @@
       <button id="name-input-button">Let's Start!</button> 
    </div>
 
-   <div id="page-container" class="opacity-effect">
+   <div id="page-container">
       
       <div id="name-container">
-         <p class="opacity-effect">Hi, <span id='name'></span>!</p>
+         <p>Hi, <span id='name'></span>!</p>
       </div>
 
       <div id="timedate-container">
 
-         <p class="opacity-effect">Today is <br> <span id='date'></span>.</p>
+         <p>Today is <br> <span id='date'></span>.</p>
 
-         <p class="opacity-effect">The time is <br> <span id='clock'></span>.</p>
+         <p>The time is <br> <span id='clock'></span>.</p>
 
       </div>
 
 
-      <div id="quote-container" class="opacity-effect"><p id='quote'></p></div>
+      <div id="quote-container"><p id='quote'></p></div>
 
-      <div id="focus-container" class="opacity-effect">Your focus of the day: <p id='focus'>not yet set.</p></div>
+      <div id="focus-container">Your focus of the day: <p id='focus'>not yet set</p></div>
 
       
 
@@ -47,30 +48,33 @@
 
       <div id="new-quote-container">
          <input type="text" id="add-quote-input" placeholder="Add quote here..." required></input>
+         <div id="new-quote-buttons">
          <button id="add-quote-button">Add Quote</button> 
          <button id="show-added-button">Show Added</button>
          <button id="reset-list-button">Reset List</button>
+         </div>
       </div>
 
-      
-      <div id="buttons-container" class="opacity-effect">
-         <button id="name-change-button" class="opacity-effect">Change Name</button> 
-         <button id="next-quote-button" class="opacity-effect">Next Quote</button>
-         <button id="new-quote-button" class="opacity-effect">Add Quote</button>
-         <button id="new-focus-button" class="opacity-effect">New Focus</button>
-         <button id="clear-focus-button" class="opacity-effect">Clear Focus</button>
+      <button id="hamburger"><i class="fa fa-bars"></i></button>
+
+      <div id="buttons-container">
+         <button id="name-change-button" >Change Name</button> 
+         <button id="next-quote-button">Next Quote</button>
+         <button id="new-quote-button">Add Quote</button>
+         <button id="new-focus-button">New Focus</button>
+         <button id="clear-focus-button">Clear Focus</button>
       </div>
 
 
-      <button id="show-todo-button" class="opacity-effect">Show To-Do</button>
+      <button id="show-todo-button">Show To-Do</button>
 
-      <div id="todo-container" class="opacity-effect">
+      <div id="todo-container">
 
          <div id="todo-main-container">
         
             <div id="todo-input-container">
                 <input id="todo-input" type="text" placeholder="Add your To-do here" value="">
-                <button id="todo-input-button">Add To-do</button>
+                <button id="todo-input-button">Add</button>
             </div>
             
             <div id="todo-list-container"></div>
@@ -90,6 +94,7 @@
 <script src="script-quotes.js"></script>
 <script src="script-focus.js"></script>
 <script src="script-todolist.js"></script>
+<script src="script-buttons.js"></script>
 
 
 </html>

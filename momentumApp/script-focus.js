@@ -62,7 +62,7 @@ function showFocus() {
    let storedFocusValue = JSON.parse(localStorage.getItem('storedFocusKey'));
 
    if(storedFocusValue === null) {
-      focusElement.textContent = "No Focus Set";
+      focusElement.textContent = "no yet set.";
    } else {
       focusElement.textContent = storedFocusValue;
    }

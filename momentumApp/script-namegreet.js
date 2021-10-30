@@ -1,4 +1,3 @@
-
 let nameInputContainer = document.getElementById('name-input-container');
 let pageContainer = document.getElementById('page-container');
 
@@ -8,6 +7,9 @@ let nameInput = document.getElementById('name-input');
 
 let nameElement = document.getElementById('name');
 
+//Script to hide page first
+window.onload = hidePage();
+//End of Script to hide page first
 
 function hidePage() {
 
@@ -15,22 +17,19 @@ function hidePage() {
 
    if(storedNameValue === null){
       
+      // for( let i=0; i < opacityEffect.length; i++){
+      //    opacityEffect[i].style.opacity = "0";
+
       pageContainer.style.transform = "scale(1,0)";
       
       nameInputContainer.style.transform = "scale(1,1)";
       nameInputContainer.style.opacity = "1";
 
-      for( let i=0; i < opacityEffect.length; i++){
-         opacityEffect[i].style.opacity = "0";
-      }
-
    }else{
       nameElement.textContent = String(storedNameValue);
       pageContainer.style.transform = "scale(1,1)";
       
-      for( let i=0; i < opacityEffect.length; i++){
-         opacityEffect[i].style.opacity = "1";
-      }
+      pageContainer.style.opacity = "1";
       
    }
 
@@ -45,9 +44,7 @@ function displayPage() {
       pageContainer.style.transform = "scale(1,1)";
       nameInputContainer.style.transform = "scale(1,0)";
 
-      for( let i=0; i < opacityEffect.length; i++){
-         opacityEffect[i].style.opacity = "1";
-      }
+      pageContainer.style.opacity = "1";
    
    } else {
       nameInput.placeholder = "Add your name first...";
@@ -59,10 +56,6 @@ function changeName() {
    localStorage.removeItem('storedNameKey')
    hidePage()
 }
-
-//Script to hide page first
-window.onload = hidePage();
-//End of Script to hide page first
 
 
 //Script for Name Input button

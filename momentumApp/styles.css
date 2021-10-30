@@ -2,10 +2,11 @@
 
 :root{
    --main-dark-color: #14279B;
-   --main-light-color: #E6E6E6;
+   --main-light-color: white;
    --accent-dark-color: #3D56B2;
    --accent-light-color: #5C7AEA;
    --accent-alert-color: palevioletred;
+
 
    --frosted-back-color: rgba(230,230,230,.15);
 
@@ -28,14 +29,9 @@
 }
 
 body{
-   background: url('https://static01.nyt.com/images/2020/03/25/smarter-living/00sl-coronaanxiety-print/00sl-coronaanxiety-videoSixteenByNineJumbo1600.jpg') no-repeat;
-
-   -moz-background-size: cover;
-   -webkit-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
-
-
+   background: url('https://static01.nyt.com/images/2020/03/25/smarter-living/00sl-coronaanxiety-print/00sl-coronaanxiety-videoSixteenByNineJumbo1600.jpg') no-repeat center fixed;
+   background-color: rgba(0, 0, 0, 0.1);
+   background-blend-mode: color;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -230,7 +226,7 @@ body{
             }
 
             #set-focus-button{
-               height: 8vh;
+               height: 5vh;
                width: 20vh;
 
                /* background-color: var(--frosted-back-color);  
@@ -256,16 +252,67 @@ body{
 
 #new-quote-container {
    position: fixed;
-   bottom: 8vh;
+   bottom: 10vh;
    left: 0vw;
    
-   border: 1px solid red;
+   /* border: 1px solid red; */
 
    transform: scale(1, 0);
    transform-origin: top;
 
    transition: all 0.25s ease-in-out;
+   display: flex;
+   flex-flow: column nowrap;
 }
+
+      #add-quote-input{
+         width: 25vw;
+         border: none;
+         outline: none;
+         background: none;
+         border-bottom: 0.25vh solid var(--main-dark-color);
+         caret-color: var(--accent-dark-color);
+
+         font-size: 3vh;
+         color: var(--main-dark-color);
+         text-align: center; 
+
+         margin-bottom: 2vh;
+      }
+
+      #add-quote-input::placeholder {
+         color: var(--accent-dark-color);
+         opacity: 0.5;
+      }
+
+      #new-quote-buttons {
+         display: flex;
+         justify-content: space-between;
+      }
+
+      #new-quote-buttons > * {
+         height: 5vh;
+         width: 15vh;
+
+         /* background-color: var(--frosted-back-color);  
+         backdrop-filter: var(--blur-amount); */
+
+         background: var(--main-dark-color);
+
+         border:none;
+         border-radius: var(--border-radius);
+
+         font-size: 2vh;
+         color: var(--main-light-color);
+
+         transition: all 0.5s ease-in-out;
+      }
+
+      #new-quote-buttons > *:hover {
+         background: var(--main-light-color);
+         box-shadow: var(--drop-shadow);
+         color: var(--main-dark-color);
+      }
 
 
 
@@ -305,16 +352,6 @@ body{
 
 
 
-
-
-
-
-
-
-
-
-
-
 #todo-container {
    z-index: 999;
    position: fixed;
@@ -336,7 +373,7 @@ body{
    bottom: 0vh;
    right: 0vw;
    
-   height: 6vh;
+   height: 5vh;
    width: 20vh;
 
    /* background-color: var(--frosted-back-color);  
