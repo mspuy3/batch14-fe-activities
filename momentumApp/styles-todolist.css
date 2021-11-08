@@ -38,7 +38,7 @@
 
       #todo-input-button{
          width: 30%;
-         background-color: var(--accent-dark-color);
+         background-color: var(--frosted-darker-color);
          color: var(--main-light-color);
          border: none;
          border-radius: var(--border-radius);
@@ -48,7 +48,7 @@
       }
 
       #todo-input-button:hover{
-         text-shadow: var(--text-shadow);
+         background-color: var(--accent-dark-color);
       }
 
       #todo-input-button:active{
@@ -104,17 +104,22 @@
                height: 6vmin;
                text-align: center;
                border-radius: var(--border-radius);
-               background-color: var(--accent-alert-color);
+               background-color: var(--frosted-alert-color);
                color: var(--main-light-color);
                outline: none;
                border: none;
                align-items: center;
+               transition: var(--fast-transition);
             }
 
-            .todo-item-delete-button:active {
-               color: var(--accent-alert-color);
-               background-color: var(--accent-light-color);
-            }
+                  .todo-item-delete-button:hover{
+                     background: var(--accent-alert-color);
+                  }
+
+                  .todo-item-delete-button:active {
+                     color: var(--accent-alert-color);
+                     background-color: var(--accent-light-color);
+                  }
 
             .todo-item-done-button{
                cursor: pointer;
@@ -122,17 +127,23 @@
                height: 6vmin;
                text-align: center;
                border-radius: var(--border-radius);
-               background-color: var(--main-dark-color);
+               background-color: var(--frosted-darker-color);
                color: var(--main-light-color);
                outline: none;
                border: none;
                align-items: center;
+
+               transition: var(--fast-transition);
             }
 
-            .todo-item-done-button:active {
-               background-color: var(--accent-light-color);
-               color: var(--main-dark-color);
-            }
+                  .todo-item-done-button:hover {
+                     background-color: var(--accent-dark-color);
+                  }
+
+                  .todo-item-done-button:active {
+                     background-color: var(--accent-light-color);
+                     color: var(--main-dark-color);
+                  }
 
             .checked {
                text-decoration: line-through var(--main-dark-color);
@@ -140,7 +151,8 @@
 
 
 #todo-clear-button{
-  background-color: var(--accent-alert-color);
+  
+  background: var(--frosted-alert-color);
   color: var(--main-light-color);
   width: 100%;
   height: 10vmin;
@@ -155,12 +167,12 @@
 }
 
 #todo-clear-button:hover{
-   text-shadow: var(--text-shadow);
+   background: var(--accent-alert-color);
 }
 
 #todo-clear-button:active{
    color: var(--accent-alert-color);
-   background-color: var(--main-light-color);
+   background: var(--main-light-color);
 }
 
 /* width */
