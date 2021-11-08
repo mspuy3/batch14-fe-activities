@@ -1,0 +1,44 @@
+.board{
+   border: 1px solid black;
+
+   width: 60vmin;
+   height: 60vmin;
+
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr;
+}
+
+.tile{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.piece{
+   background-color:white;
+   width: 90%;
+   height: 90%;
+}
+
+
+.playerO{
+   background-color: blue;
+}
+
+.playerX{
+   background-color: red;
+}
+
+.warningShow{
+   transform: scale(0,1);
+   opacity: 1;
+   transition: all 0.5s ease-in-out;
+}
+
+.warningHide{
+   transform: scale(0,0);
+   transform-origin: left;
+   opacity: 0;
+   transition: all 0.5s ease-in-out;
+}
