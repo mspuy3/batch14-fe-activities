@@ -10,33 +10,56 @@
 </head>
 <body>
 
-   <div class="board">
-      <div class="tile"><button class="piece" id="r0c0"></button></div>
-      <div class="tile"><button class="piece" id="r0c1"></button></div>
-      <div class="tile"><button class="piece" id="r0c2"></button></div>
-      <div class="tile"><button class="piece" id="r1c0"></button></div>
-      <div class="tile"><button class="piece" id="r1c1"></button></div>
-      <div class="tile"><button class="piece" id="r1c2"></button></div>
-      <div class="tile"><button class="piece" id="r2c0"></button></div>
-      <div class="tile"><button class="piece" id="r2c1"></button></div>
-      <div class="tile"><button class="piece" id="r2c2"></button></div>
+   <div class="welcomeContainer">
+      <p class="welcomeMessage">Who goes first?</p>
+      <button class="welcomeButtton" id="xPlayerChose">X</button>
+      <button class="welcomeButtton" id="oPlayerChose">O</button>
    </div>
 
-   <div class="playerBanner">
-      It's <span id="currentPlayer">X</span>'s turn!
-   </div>
 
-   <div class="warningHide" id="warningBanner">
-      The tile is taken!
-   </div>
-   <div class="historyButtonsContainer">
-      <button class="historyButtons" id="previousButton">Previous</button>
-      <button class="historyButtons" id="currentButton">Current</button>
-      <button class="historyButtons" id="nextButton">Next</button>
+   <div class="gameContainer welcomeHide">
+
+      <div class="recordsContainer">
+         <span class="recordsTally"> X has <span id="xCounter">0</span> wins. O has <span id="oCounter">0</span> wins. There are <span id="tieCounter">0</span> ties.</span>
+         <button class="recordButtons buttonHide" id="nextGameButton">Next Game</button>
+      </div>
+
+      <div class="board">
+         <div class="tile"><button class="piece" id="r0c0"></button></div>
+         <div class="tile"><button class="piece" id="r0c1"></button></div>
+         <div class="tile"><button class="piece" id="r0c2"></button></div>
+         <div class="tile"><button class="piece" id="r1c0"></button></div>
+         <div class="tile"><button class="piece" id="r1c1"></button></div>
+         <div class="tile"><button class="piece" id="r1c2"></button></div>
+         <div class="tile"><button class="piece" id="r2c0"></button></div>
+         <div class="tile"><button class="piece" id="r2c1"></button></div>
+         <div class="tile"><button class="piece" id="r2c2"></button></div>
+      </div>
+
+      <div class="playerBanner">
+         
+         <p class="currentPlayerContainer">It's Player <span id="currentPlayer"></span>'s turn!</p>
+         <p class="winningPlayerContainer warningHide">Player <span id="winningPlayer"></span> wins!</p>
+         <p class="tieGameContainer warningHide">It's a tie!</p>
+
+      </div>
+
+      <div class="warningHide" id="warningBanner">
+         The tile is taken!
+      </div>
+      
+      <div class="historyButtonsContainer">
+         <p class="historyBanner buttonHide">See History of Moves</p>
+         <button class="historyButtons buttonHide" id="previousButton">Previous Move</button>
+         <button class="historyButtons buttonHide" id="nextButton">Next Move</button>
+         <button class="historyButtons buttonHide" id="currentButton">Winning Move</button>
+      </div>
+
    </div>
 
 </body>
 
-<script src="script.js"></script>
+<script src="script-welcome.js"></script>
+<script src="script-game.js"></script>
 
 </html>
