@@ -17,7 +17,7 @@
    --transition-items: all 0.5s ease-in-out;
    --transition-page: all 1s ease-in-out;
    
-   --board-size: 75vmin;
+   --board-size: 90vmin;
 }
 
    @media (min-aspect-ratio: 9/16) {
@@ -27,7 +27,7 @@
          --font-size-large: 8vmin;
          --font-size-larger: 10vmin;
 
-         --board-size: 67.5vmin;
+         --board-size: 50vmax;
       }
    }
 
@@ -38,8 +38,14 @@
          --font-size-large: 8vmin;
          --font-size-larger: 10vmin;
 
-         --board-size: 50vmin;      
+         --board-size: 50vmax;      
       } 
+   }
+
+   @media (min-aspect-ratio: 1/1) {
+      :root {
+         --board-size: 50vmin;  
+      }
    }
 
 *{
@@ -198,7 +204,7 @@ button {
       grid-column: 1/7;
 
       width: 100%;
-      height: 75%;
+      height: 100%;
       
       /* background-color: blue; */
       
@@ -317,7 +323,7 @@ button {
    }
 
    .historyButtonsContainer{
-      grid-row: 26/32;
+      grid-row: 26/31;
       grid-column: 2/18;
 
       height: 100%;
@@ -336,15 +342,15 @@ button {
          flex-basis: 100%;
          font-size: var(--font-size-medium);
          color: var(--color-dark);
+         /* background-color: blue; */
       }
 
       .historyButtons{
-         font-size: var(--font-size-small);
-         
-         height: 25%;
+         /* height: var(--font-size-small); */
          padding: 0 2.5%;
          margin: 0 1.25%;
 
+         font-size: var(--font-size-small);
          background-color: var(--color-dark);
          color: var(--color-light);
       }
