@@ -139,10 +139,12 @@ function theChecker(playingPiece, boardStatus) {
 
          if(patternCounter == 3) {
             console.log(playingPiece +" Wins!");
+            document.querySelector('#winningPlayer').textContent = playingPiece;
             winnerSwitch = 1;
+            
             document.querySelector('.currentPlayerContainer').classList.add("warningHide");
             document.querySelector('.winningPlayerContainer').classList.remove("warningHide");
-            document.querySelector('#winningPlayer').textContent = playingPiece;
+            
             return  
          }
 
@@ -180,6 +182,7 @@ function buttonToggler(boardHistory, winnerSwitch) {
 function showNextGameButton(){
    if (winnerSwitch == 1) {
       document.querySelector("#nextGameButton").classList.remove("buttonHide");
+      document.querySelector("#resetGameButton").classList.add("buttonHide");
 
       let winningPiece = document.querySelector('#winningPlayer').textContent;
 
@@ -189,7 +192,7 @@ function showNextGameButton(){
       } else if(winningPiece == 'O') {
          oWins += 1;
          document.querySelector('#oCounter').textContent = oWins;
-      } else {
+      } else if(winningPiece == '') {
          xoTies += 1;
          document.querySelector('#tieCounter').textContent = xoTies;
       }
@@ -198,7 +201,7 @@ function showNextGameButton(){
       document.querySelector("#nextGameButton").classList.add("buttonHide");     
    };
 
-   document.querySelector('#winningPlayer').textContent = '';
+   // document.querySelector('#winningPlayer').textContent = '';
 
 }
 
@@ -284,9 +287,9 @@ function currentBoard() {
 
 
    console.log("This is the current board");
-   console.log(boardStatus);
+   console.table(boardStatus);
    console.log("This is the board history");
-   console.log( boardHistory);
+   console.table( boardHistory);
 
    document.querySelector("#nextButton").classList.add("buttonHide");
    document.querySelector("#currentButton").classList.add("buttonHide");
@@ -320,6 +323,8 @@ function nextGame() {
    console.clear();
 
    document.querySelector("#nextGameButton").classList.add("buttonHide");     
+
+   document.querySelector("#resetGameButton").classList.remove("buttonHide");
 
    document.querySelector(".historyBanner").classList.add("buttonHide");
 
@@ -360,6 +365,8 @@ function nextGame() {
 
    boardHTMLUpdater(boardStatus);
 
+   document.querySelector('#winningPlayer').textContent = '';
+
 }
 
 
@@ -373,6 +380,4 @@ document.querySelector('#nextButton').addEventListener('click',nextBoard);
 
 document.querySelector('#nextGameButton').addEventListener('click',nextGame);
 
-
-
-
+document.querySelector('#resetGameButton').addEventListener('click',nextGame);
