@@ -323,7 +323,7 @@ button {
    }
 
    .historyButtonsContainer{
-      grid-row: 26/31;
+      grid-row: 26/30;
       grid-column: 2/18;
 
       height: 100%;
