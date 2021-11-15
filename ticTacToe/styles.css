@@ -130,6 +130,8 @@ button {
    grid-row: 28/30;
 
    font-size: var(--font-size-small);
+   font-weight: bold;
+   color: var(--color-dark);
    text-align: center;
 }
 

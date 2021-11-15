@@ -34,8 +34,6 @@ function playerToggler(playingPiece) {
 }
 
 
-
-
 function boardStatusUpdater(pieceClickedElement, playingPiece){
 
    boardStatus[pieceClickedElement[1]][pieceClickedElement[3]] = playingPiece;
@@ -44,9 +42,6 @@ function boardStatusUpdater(pieceClickedElement, playingPiece){
    console.table(boardStatus);
 
 }
-
-
-
 
 
 function boardHTMLUpdater(chosenBoard) {
@@ -71,9 +66,6 @@ function boardHTMLUpdater(chosenBoard) {
 };
 
 
-
-
-
 function warningToggler(clicked) {
    var element = document.getElementById("warningBanner");
 
@@ -95,9 +87,6 @@ function warningToggler(clicked) {
       console.log("The tile is taken! I'll retain the banner");
    }       
 }
-
-
-
 
 
 function theChecker(playingPiece, boardStatus) {
@@ -179,7 +168,7 @@ function buttonToggler(boardHistory, winnerSwitch) {
 }
 
 
-function showNextGameButton(){
+function showNextGameButton() {
    if (winnerSwitch == 1) {
       document.querySelector("#nextGameButton").classList.remove("buttonHide");
       document.querySelector("#resetGameButton").classList.add("buttonHide");
@@ -200,15 +189,10 @@ function showNextGameButton(){
    } else if (winnerSwitch == 0 && !document.querySelector("#nextGameButton").classList.add("buttonHide"))  { 
       document.querySelector("#nextGameButton").classList.add("buttonHide");     
    };
-
-   // document.querySelector('#winningPlayer').textContent = '';
-
 }
 
 
-
 function myFunction(pieceClicked) {
-
    if(winnerSwitch == 0){
 
       let pieceClickedElement = pieceClicked.target.id;
@@ -244,9 +228,7 @@ function myFunction(pieceClicked) {
          warningToggler(tileChecker);
 
       }; 
-   
    } else {return;};
-   
 }
 
 
@@ -279,12 +261,10 @@ function previousBoard () {
 }
 
 
-
 function currentBoard() {
    console.clear();
    boardHTMLUpdater(boardStatus);
    boardHistoryViewer = 1;
-
 
    console.log("This is the current board");
    console.table(boardStatus);
@@ -295,7 +275,6 @@ function currentBoard() {
    document.querySelector("#currentButton").classList.add("buttonHide");
    document.querySelector("#previousButton").classList.remove("buttonHide");
 }
-
 
 
 function nextBoard () {
@@ -344,7 +323,6 @@ function nextGame() {
       piece.classList.remove("playerX");
    })
    
-
    boardStatus = [
       ['','',''],
       ['','',''],
@@ -366,7 +344,6 @@ function nextGame() {
    boardHTMLUpdater(boardStatus);
 
    document.querySelector('#winningPlayer').textContent = '';
-
 }
 
 
