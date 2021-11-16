@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <title>Simple Calculator Web App</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="img/logo1.png" type = "image/x-icon">
+
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
 <body>
   <header>Simple Calculator</header>
   
@@ -20,22 +22,22 @@
   </div>
   
   <div id="operations-container">
-    <button id="Add" onclick="add()">Add</button>
-    <button id="Subtract" onclick="subtract()">Subtract</button>
-    <button id="Mutiply" onclick="multiply()">Multiply</button>
-    <button id="Divide" onclick="divide()">Divide</button>
-    <button id="Remainder" onclick="remainder()">Remainder</button>
+    <button id="add-btn" class="operations-btns">Add</button>
+    <button id="subtract-btn" class="operations-btns">Subtract</button>
+    <button id="multiply-btn" class="operations-btns">Multiply</button>
+    <button id="divide-btn" class="operations-btns">Divide</button>
+    <button id="remainder-btn" class="operations-btns">Remainder</button>
   </div>
   <div id="answer-container">
     <p id="answer">Answer Appears Here</p>
   </div>
-  <button id="Clear" onclick="clearOut()"> Clear </button>
+  <button id="clear-btn">Clear</button>
    <div id="last-container">
     <p id="last">Last Calculation Appears Here</p>
   </div>
  
 </body>
-<!-- partial -->
+
   <script  src="./script.js"></script>
 
 </body>

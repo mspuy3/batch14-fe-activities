@@ -17,9 +17,7 @@ let boardHistoryViewer = 1;
 let winnerSwitch = 0;
 
 let xWins = 0;
-
 let oWins = 0;
-
 let xoTies = 0;
 
 
@@ -224,10 +222,9 @@ function myFunction(pieceClicked) {
       
 
       } else if (tileChecker !== '') {
-
          warningToggler(tileChecker);
-
       }; 
+
    } else {return;};
 }
 
@@ -252,7 +249,6 @@ function previousBoard () {
       if(boardHistoryViewer > 2){
          document.querySelector("#currentButton").classList.remove("buttonHide");
       }
-
    };  
    
    if ( (boardHistory.length - boardHistoryViewer) == 0) {
@@ -302,9 +298,7 @@ function nextGame() {
    console.clear();
 
    document.querySelector("#nextGameButton").classList.add("buttonHide");     
-
    document.querySelector("#resetGameButton").classList.remove("buttonHide");
-
    document.querySelector(".historyBanner").classList.add("buttonHide");
 
    document.querySelectorAll(".historyButtons").forEach(button => {
