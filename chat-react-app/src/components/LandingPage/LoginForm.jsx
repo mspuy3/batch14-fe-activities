@@ -19,16 +19,12 @@ const LoginForm = () => {
     setIsLoading(true)
 
     const [response, errors] = await login(email, password)
-
-    console.log('response', response);
-    console.log('errors', errors);
     
     if (errors.length > 0) {
       setFlash('')
       setError(errors)
       setIsLoading(false)
     } else {
-      console.log('login response', response)
       setIsLoading(false)
       setFlash('Successful login')
       setError([])
