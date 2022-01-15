@@ -35,36 +35,38 @@ const LoginForm = () => {
 
   return (
 
-    <div>
+    <div className='m-3'>
 
       {isLoading ? (
-         <p>Logging In....</p>
+         <h1 className='text-center text-primary text-center p-1'>Logging In....</h1>
        ) : (
-        <div>
-        Log In
-        <div>
-          <label htmlFor=''>email:</label>
+        <div className='bg-primary vh-50 text-light text-center p-2 d-flex flex-column'>
+        <h2 className='text-center p-1'>Log In</h2>
+ 
           <input
             type='email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder='Email'
+            className='mw-100 p-1 m-1'
           />
-        </div>
-        <div>
-          <label htmlFor=''>password</label>
+ 
           <input
             type='password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder='Password'
+            className='mw-100 p-1 m-1'
           />
-        </div>
+        
         {error.lg}
-        <button onClick={handleLogin}>Login</button>
+        <button onClick={handleLogin} className="mw-100 m-1 p-1">Login</button>
+        <button className="mw-100 m-1 p-1 border border-primary bg-primary text-primary">Login</button>
       </div>
       )}
 
 
-      {error.length ? error.map((err) => <p>{err}</p>) : null}
+      {error.length ? error.map((err) => <p className='text-center text-danger text-center p-1'>{err}</p>) : null}
       {flash && <p>{flash}</p>}
 
     </div>

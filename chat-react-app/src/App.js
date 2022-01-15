@@ -15,7 +15,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className='bg-light'>
       <Router>
       <Routes>
         <Route index element={<LandingPage />} />

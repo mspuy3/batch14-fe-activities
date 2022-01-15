@@ -25,6 +25,8 @@ const RegisterForm = () => {
      if (errors.length > 0) {
       setFlash('') 
       setError(errors)
+      setPassword("")
+      setPasswordConfirmation("")
      } else {
       setError([])
       setFlash('Successful register')
@@ -33,43 +35,48 @@ const RegisterForm = () => {
    }
 
    return (
-   <div>
+   <div className='m-3'>
       {isLoading ? (
-         <p>Registering....</p>
+         <h1 className='text-center text-secondary text-center p-1'>Registering....</h1>
        ) : (
-         <div>
-           Registration
-           <div>
-             <label htmlFor=''>Email: </label>
+        <div className='bg-secondary vh-50 text-light text-center p-2 d-flex flex-column'>
+        <h2 className='text-center p-1'>Register</h2>
+
              <input
                type='email'
                value={email}
                onChange={(e) => setEmail(e.target.value)}
+               placeholder='Email'
+               className='mw-100 p-1 m-1'
              />
-           </div>
-           <div>
-             <label htmlFor=''>Set Password: </label>
+
+
              <input
                type='password'
                value={password}
                onChange={(e) => setPassword(e.target.value)}
+               placeholder='Password'
+               className='mw-100 p-1 m-1'
              />
-           </div>
-           <div>
-             <label htmlFor=''>Repeat Password: </label>
+
+
              <input
                type='password'
                value={passwordConfirmation}
                onChange={(e) => setPasswordConfirmation(e.target.value)}
+               placeholder='Re-enter Password'
+               className='mw-100 p-1 m-1'
              />
-           </div>
-           <button onClick={handleRegister}>Register</button>
+
+           <button onClick={handleRegister} className="mw-100 m-1 p-1">Register</button>
          </div>
        )}
  
-       {error.length ? error.map((err) => <p>{err}</p>) : null}
-       {flash && <p>{flash}</p>}
+       {error.length ? error.map((err) => <p className='text-center text-danger text-center'>{err}</p>) : null}
+       {flash && <p className='text-center text-success text-center'>{flash}</p>}
 
+        {/* {error.length ? error.map((err) => alert(error)) : null}
+       {flash && alert({flash})} */}
    
    </div>
    )
